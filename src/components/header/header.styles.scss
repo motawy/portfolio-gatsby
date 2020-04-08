@@ -1,0 +1,28 @@
+.Header {
+  width: 100%;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  position: fixed;
+
+  .wrapper {
+    background-color: #eee;
+    height: 80px;
+    -webkit-box-shadow: 0 0 10px 5px #1111;
+    box-shadow: 0 0 10px 5px #1111;
+
+    .logo {
+      top: 20px;
+      left: 30px;
+      position: absolute;
+
+      a {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+}

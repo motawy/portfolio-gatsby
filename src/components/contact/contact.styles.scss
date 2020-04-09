@@ -1,0 +1,37 @@
+.contact-section {
+  padding: 0 30px;
+
+  .contact-wrapper {
+    max-width: 1330px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .contact-wrap {
+      padding-top: 80px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .contact-section {
+    padding: 0 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 0 20px;
+
+    .contact-wrap {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+}

@@ -5,6 +5,8 @@ import Hero from "../components/hero/hero.component"
 import Resume from "../components/resume/resume.component"
 import Services from "../components/services/services.component"
 import Portfolio from "../components/portfolio/portfolio.component"
+import Contact from "../components/contact/contact.component"
+
 import "./index.css"
 
 export default () => (
@@ -14,5 +16,6 @@ export default () => (
     <Resume />
     <Services />
     <Portfolio />
+    <Contact />
   </Layout>
 )

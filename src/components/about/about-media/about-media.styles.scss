@@ -1,0 +1,22 @@
+.section-about-media {
+  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  label {
+    width: 120px;
+    color: #111;
+  }
+  p {
+    padding: 0 10px;
+    color: #444;
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 360px) {
+  .section-about-media {
+    display: -webkit-box;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react"
-import { FaPlus } from "react-icons/fa"
+import { FaRegPaperPlane } from "react-icons/fa"
 import "./form.styles.scss"
 
 const ContactForm = () => {
@@ -39,7 +39,7 @@ const ContactForm = () => {
           </label>
           <div className="btn__send">
             <button type="submit" id="btn_submit">
-              <FaPlus size="24px" />
+              <FaRegPaperPlane size="24px" />
               <span> Send</span>
             </button>
           </div>

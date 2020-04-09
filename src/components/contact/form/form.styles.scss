@@ -65,9 +65,15 @@
           background-color: #f2d367;
           border-color: #f2d367;
         }
-        i {
-          padding-right: 5px;
+        svg {
+          padding-right: 8px;
           font-size: 12px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        span {
+          display: inline-block;
+          vertical-align: middle;
         }
       }
     }

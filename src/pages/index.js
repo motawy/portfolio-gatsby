@@ -6,7 +6,7 @@ import Resume from "../components/resume/resume.component"
 import Services from "../components/services/services.component"
 import Portfolio from "../components/portfolio/portfolio.component"
 import Contact from "../components/contact/contact.component"
-
+import Footer from "../components/footer/footer.component"
 import "./index.css"
 
 export default () => (
@@ -17,5 +17,6 @@ export default () => (
     <Services />
     <Portfolio />
     <Contact />
+    <Footer />
   </Layout>
 )

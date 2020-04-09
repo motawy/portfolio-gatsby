@@ -12,8 +12,8 @@ const ContactForm = () => {
         <span>Fill out this form we'll contact back shortly.</span>
       </div>
       <div className="form">
-        <form name="contact" method="POST">
-          <input type="hidden" name="form-name" value="contact" />
+        <form method="post" netlify-honeypot="bot-field" data-netlify="true">
+          <input type="hidden" name="bot-field" />
           <label htmlFor="name">
             <input
               type="text"
@@ -22,7 +22,6 @@ const ContactForm = () => {
               placeholder="Type your name"
             />
           </label>
-
           <label htmlFor="email">
             <input
               type="email"
@@ -31,7 +30,6 @@ const ContactForm = () => {
               placeholder="Type your email"
             />
           </label>
-
           <label htmlFor="message">
             <textarea
               name="message"

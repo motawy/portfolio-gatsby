@@ -6,7 +6,7 @@ const BurgerMenu = () => {
   const handleClick = () => {
     const menu = document.querySelector(".menu")
     const closeBtn = document.querySelector(".close_btn")
-    const buttonA = document.querySelector(".nav button")
+    const buttons = document.querySelectorAll(".nav button")
     if (menu.style.visibility === "") menu.style.visibility = "hidden"
 
     if (menu.style.visibility === "hidden") {
@@ -19,10 +19,12 @@ const BurgerMenu = () => {
       menu.style.opacity = 0
     })
 
-    buttonA.addEventListener("click", () => {
-      menu.style.visibility = "hidden"
-      menu.style.opacity = 0
-    })
+    for (const button of buttons) {
+      button.addEventListener("click", () => {
+        menu.style.visibility = "hidden"
+        menu.style.opacity = 0
+      })
+    }
   }
 
   return (

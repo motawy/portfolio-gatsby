@@ -35,7 +35,7 @@
           text-transform: uppercase;
           font-size: 67px;
           background-color: #eee;
-          background-image: url("../../img/hero/q1.webp");
+          background-image: url("../../../images/hero/q1.png");
           background-size: 80px;
           background-position: 20px top;
           background-repeat: no-repeat;
@@ -153,12 +153,12 @@
       position: relative;
       width: 800px;
       background-color: #eee;
-      background-image: url("../../img/hero/q2.webp");
+      background-image: url("../../../images/hero/q2.png");
       background-position: center;
       background-repeat: no-repeat;
 
-      img {
-        position: absolute;
+      .img_fluid {
+        position: absolute !important;
         bottom: 0;
         left: 50%;
         width: 100%;

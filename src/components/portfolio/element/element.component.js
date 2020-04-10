@@ -1,17 +1,15 @@
 import React from "react"
 import { FaLink } from "react-icons/fa"
+import Img from "gatsby-image"
 import "./element.styles.scss"
 
-const Element = ({ link, imageWebp, image, title }) => {
+const Element = ({ link, image, title }) => {
   return (
     <div className="element-container">
       <div className="element-card">
         <a href={link} className="onHover">
           <div className="img">
-            <picture>
-              <source srcSet={imageWebp} type="image/webp" />
-              <img src={image} alt="work" />
-            </picture>
+            <Img fluid={image} />
           </div>
           <div className="details-wrap">
             <div className="details">

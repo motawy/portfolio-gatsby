@@ -1,11 +1,30 @@
 import React from "react"
 import { FaClock, FaPlus } from "react-icons/fa"
-import mouse from "../../img/icons/mouse.svg"
-import avatar from "../../img/hero/avatar.png"
-import avatarWebp from "../../img/hero/avatar.webp"
+import Typewriter from "typewriter-effect"
+import Mouse from "./mouse.svg"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import "./hero.styles.scss"
 
 const Hero = () => {
+  const { avatar } = useStaticQuery(graphql`
+    query {
+      avatar: file(relativePath: { eq: "hero/avatar.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
+  const strings = [
+    "Full-Stack Developer",
+    "Boxing Enthusiast",
+    "Motorcycles Lover",
+    "Coffee addict",
+  ]
   return (
     <section
       className="section-hero"
@@ -25,9 +44,15 @@ const Hero = () => {
             </h1>
           </div>
           <div className="par">
-            <p>
-              Welcome! This my personal portfolio website. Please take a look!
-            </p>
+            <Typewriter
+              options={{
+                strings: strings,
+                autoStart: true,
+                loop: true,
+                wrapperClassName: "",
+                cursorClassName: "",
+              }}
+            />
           </div>
           <div className="hero-btn">
             <a href="#contact" id="contact_btn">
@@ -39,15 +64,12 @@ const Hero = () => {
           </div>
           <div className="about">
             <a href="#about">
-              <img src={mouse} alt="scroll" />
+              <img src={Mouse} alt="Scroll down" />
             </a>
           </div>
         </div>
         <div className="right">
-          <picture>
-            <source srcSet={avatarWebp} type="image/webp" />
-            <img src={avatar} alt="avatar of mido" />
-          </picture>
+          <Img fluid={avatar.childImageSharp.fluid} className="img_fluid" />
         </div>
       </div>
     </section>

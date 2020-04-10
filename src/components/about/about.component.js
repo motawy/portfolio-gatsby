@@ -3,11 +3,22 @@ import AboutPersonal from "./about-personal/about-personal.component"
 import AboutCV from "./about-cv/about-cv.component"
 import AboutText from "./about-text/about-text.component"
 import TitleSection from "../title-section/title-section.component"
-import about_image from "../../img/hero/about.jpg"
-import about_imageWebp from "../../img/hero/about.webp"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import "./about.styles.scss"
 
 const About = () => {
+  const { about } = useStaticQuery(graphql`
+    query {
+      about: file(relativePath: { eq: "hero/about.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
   return (
     <section className="about-section" id="about">
       <div className="about-wrapper">
@@ -18,10 +29,11 @@ const About = () => {
         />
         <div className="about-container">
           <div className="about-pic">
-            <picture>
-              <source srcSet={about_imageWebp} type="image/webp" />
-              <img src={about_image} alt="about me" />
-            </picture>
+            <Img
+              fluid={about.childImageSharp.fluid}
+              alt="Avatar of Mido"
+              style={{ height: "500px" }}
+            />
           </div>
           <div className="about-info">
             <div className="about-name">

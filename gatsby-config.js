@@ -6,5 +6,17 @@ module.exports = {
     author: "Mohammed Tantawy",
     url: "https://motawy.me",
   },
-  plugins: [`gatsby-plugin-sass`],
+  plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "images",
+      },
+    },
+  ],
 }

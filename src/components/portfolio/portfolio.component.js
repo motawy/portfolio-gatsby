@@ -1,17 +1,43 @@
 import React from "react"
 import TitleSection from "../title-section/title-section.component"
 import Element from "./element/element.component"
-import crwnWebp from "../../img/portfolio/crwn.webp"
-import crwnImg from "../../img/portfolio/crwn.png"
-import gigaWebp from "../../img/portfolio/giga.webp"
-import gigaImg from "../../img/portfolio/giga.png"
-import gmtWebp from "../../img/portfolio/gmt.webp"
-import gmtImg from "../../img/portfolio/gmt.png"
-import sbWebp from "../../img/portfolio/smartbrain.webp"
-import sbImg from "../../img/portfolio/smartbrain.png"
+import { graphql, useStaticQuery } from "gatsby"
 import "./portfolio.styles.scss"
 
 const Portfolio = () => {
+  const { crwn, giga, gmt, smartbrain } = useStaticQuery(graphql`
+    query {
+      crwn: file(relativePath: { eq: "portfolio/crwn.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      giga: file(relativePath: { eq: "portfolio/giga.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      gmt: file(relativePath: { eq: "portfolio/gmt.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      smartbrain: file(relativePath: { eq: "portfolio/smartbrain.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <section className="portfolio-section" id="portfolio">
       <div className="portfolio-wrapper">
@@ -24,26 +50,22 @@ const Portfolio = () => {
           <div className="portfolio">
             <Element
               link="https://github.com/motawy/crwn-clothing"
-              imageWebp={crwnWebp}
-              image={crwnImg}
+              image={crwn.childImageSharp.fluid}
               title="CRWN CLOTHING"
             />
             <Element
               link="https://github.com/motawy/giga-ball"
-              imageWebp={gigaWebp}
-              image={gigaImg}
+              image={giga.childImageSharp.fluid}
               title="GIGA BALL"
             />
             <Element
               link="https://github.com/motawy/get-me-there"
-              imageWebp={gmtWebp}
-              image={gmtImg}
+              image={gmt.childImageSharp.fluid}
               title="GET ME THERE"
             />
             <Element
               link="https://github.com/motawy/smart-brain"
-              imageWebp={sbWebp}
-              image={sbImg}
+              image={smartbrain.childImageSharp.fluid}
               title="SMART BRAIN"
             />
           </div>

@@ -15,6 +15,7 @@ const SEO = () => {
 
   return (
     <Helmet title={seo.title}>
+      <html lang="en" />
       <meta name="description" content={seo.description} />
       {seo.url && <meta property="og:url" content={seo.url} />}
       {seo.title && <meta property="og:title" content={seo.title} />}

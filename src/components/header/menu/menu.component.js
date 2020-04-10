@@ -1,5 +1,6 @@
 import React from "react"
 import Social from "../social/social.component"
+import jump from "jump.js"
 import "./menu.styles.scss"
 
 const Menu = () => {
@@ -9,22 +10,22 @@ const Menu = () => {
         <nav className="nav">
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <button onClick={() => jump("#home")}>Home</button>
             </li>
             <li>
-              <a href="#about">About me</a>
+              <button onClick={() => jump("#about")}>About me</button>
             </li>
             <li>
-              <a href="#resume">Resume</a>
+              <button onClick={() => jump("#resume")}>Resume</button>
             </li>
             <li>
-              <a href="#services">Services</a>
+              <button onClick={() => jump("#services")}>Services</button>
             </li>
             <li>
-              <a href="#portfolio">Portfolio</a>
+              <button onClick={() => jump("#portfolio")}>Portfolio</button>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <button onClick={() => jump("#contact")}>Contact</button>
             </li>
           </ul>
         </nav>

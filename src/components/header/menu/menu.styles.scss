@@ -34,15 +34,24 @@
           margin-bottom: 20px;
         }
 
-        a {
+        button {
+          cursor: pointer;
+          border: none;
           text-decoration: none;
+          background-color: transparent;
           color: #fff;
           -webkit-transition: all 0.3s ease;
           -o-transition: all 0.3s ease;
           transition: all 0.3s ease;
 
+          &:focus {
+            outline: none;
+          }
           &:hover {
             color: #f2d367;
+            -webkit-transform: scale(1.5, 1.5);
+            -ms-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
           }
         }
       }
@@ -82,13 +91,23 @@
 
           li {
             margin-right: 20px;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
 
             a {
+              text-decoration: none;
               color: #fff;
+            }
 
-              &:hover {
-                color: #f2d367;
-              }
+            &:hover > a {
+              color: #f2d367;
+            }
+
+            &:hover {
+              -webkit-transform: scale(1.5, 1.5);
+              -ms-transform: scale(1.5, 1.5);
+              transform: scale(1.5, 1.5);
             }
           }
         }

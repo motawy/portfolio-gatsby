@@ -4,6 +4,7 @@ import Typewriter from "typewriter-effect"
 import Mouse from "./mouse.svg"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import jump from "jump.js"
 import "./hero.styles.scss"
 
 const Hero = () => {
@@ -55,17 +56,17 @@ const Hero = () => {
             />
           </div>
           <div className="hero-btn">
-            <a href="#contact" id="contact_btn">
+            <button onClick={() => jump("#contact")} id="contact_btn">
               <FaPlus /> Contact me
-            </a>
+            </button>
             <span>
               <FaClock /> I'll get in touch with you ASAP.
             </span>
           </div>
           <div className="about">
-            <a href="#about">
+            <button onClick={() => jump("#about")} id="to_about">
               <img src={Mouse} alt="Scroll down" />
-            </a>
+            </button>
           </div>
         </div>
         <div className="right">

@@ -6,7 +6,7 @@ const BurgerMenu = () => {
   const handleClick = () => {
     const menu = document.querySelector(".menu")
     const closeBtn = document.querySelector(".close_btn")
-    const buttonA = document.querySelector(".nav a")
+    const buttonA = document.querySelector(".nav button")
     if (menu.style.visibility === "") menu.style.visibility = "hidden"
 
     if (menu.style.visibility === "hidden") {

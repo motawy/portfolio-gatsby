@@ -67,6 +67,10 @@
           font-size: 16px;
           color: #444;
           padding-bottom: 200px;
+          svg {
+            margin-right: 5px;
+            font-size: 14px;
+          }
         }
 
         #contact_btn {
@@ -92,9 +96,9 @@
             border-color: #f2d367;
           }
 
-          i {
-            padding-right: 5px;
-            font-size: 12px;
+          svg {
+            margin-right: 5px;
+            font-size: 14px;
           }
         }
       }

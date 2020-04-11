@@ -1,10 +1,10 @@
 import React from "react"
 import { FaClock, FaPlus } from "react-icons/fa"
-import Typewriter from "typewriter-effect"
 import Mouse from "./mouse.svg"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import jump from "jump.js"
+import TextLoop from "react-text-loop"
 import "./hero.styles.scss"
 
 const Hero = () => {
@@ -20,12 +20,6 @@ const Hero = () => {
     }
   `)
 
-  const strings = [
-    "Full-Stack Developer",
-    "Boxing Enthusiast",
-    "Motorcycles Lover",
-    "Coffee addict",
-  ]
   return (
     <section
       className="section-hero"
@@ -41,16 +35,16 @@ const Hero = () => {
               Tawy
             </h1>
           </div>
-          <div className="par">
-            <Typewriter
-              options={{
-                strings: strings,
-                autoStart: true,
-                loop: true,
-                wrapperClassName: "",
-                cursorClassName: "",
-              }}
-            />
+          <div className="par" id="selector">
+            <h1 className="ah-headline">
+              I'm{" "}
+              <TextLoop mask={true}>
+                <span>a Full-Stack Developer</span>
+                <span>a Cloud Lover </span>
+                <span>a Coffee Addict </span>
+                <span>a Boxing Enthusiast </span>
+              </TextLoop>{" "}
+            </h1>
           </div>
           <div className="hero-btn">
             <button onClick={() => jump("#contact")} id="contact_btn">

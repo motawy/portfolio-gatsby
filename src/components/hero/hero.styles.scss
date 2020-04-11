@@ -17,16 +17,6 @@
     .left {
       position: relative;
 
-      .phone {
-        a {
-          line-height: 36px;
-          font-weight: 500;
-          color: #666;
-          text-decoration: none;
-          z-index: 2;
-        }
-      }
-
       .hero-title {
         padding-top: 100px;
 
@@ -162,10 +152,7 @@
     .right {
       position: relative;
       width: 800px;
-      background-color: #eee;
-      background-image: url("../../../images/hero/q2.png");
-      background-position: center;
-      background-repeat: no-repeat;
+      background: no-repeat url("../../../images/hero/q2.png");
 
       .img_fluid {
         position: absolute !important;
@@ -184,10 +171,6 @@
   .section-hero {
     .wrapper {
       .left {
-        .phone {
-          padding-top: 50px;
-        }
-
         .hero-title {
           h1 {
             &:before {
@@ -205,12 +188,6 @@
     padding: 30px 80px 0;
     .wrapper {
       .left {
-        .phone {
-          a {
-            font-weight: 400;
-            font-size: 0.8rem;
-          }
-        }
         .title {
           h1 {
             font-size: 50px;
@@ -237,9 +214,6 @@
             padding-bottom: 150px;
           }
         }
-      }
-      .right {
-        background-position: 60% 100%;
       }
     }
   }
@@ -268,9 +242,6 @@
         }
         .about {
           bottom: 20px;
-        }
-        .phone {
-          padding-top: 70px;
         }
       }
       .right {

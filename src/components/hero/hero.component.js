@@ -34,9 +34,6 @@ const Hero = () => {
     >
       <div className="wrapper">
         <div className="left">
-          <div className="phone">
-            <a href="mailto:hello@motawy.me">hello@motawy.me</a>
-          </div>
           <div className="hero-title">
             <h1>
               M<span>i</span>do

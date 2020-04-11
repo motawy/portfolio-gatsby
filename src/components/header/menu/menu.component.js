@@ -31,13 +31,13 @@ const Menu = () => {
         </nav>
         <div className="info">
           <div className="info-wrap">
-            <span>CONTACT INFO :</span>
+            <span>CONTACT INFO</span>
             <ul className="contact">
               <li>Melbourne, AU</li>
               <li>+61 402 671 497</li>
               <li>hello@motawy.me</li>
             </ul>
-            <span>FOLLOW ME :</span>
+            <span>FIND ME HERE</span>
             <ul className="link">
               <Social size="32" />
             </ul>

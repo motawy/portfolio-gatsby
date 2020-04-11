@@ -14,7 +14,7 @@ const ContactForm = () => {
       <div className="form">
         <form method="post" netlify-honeypot="bot-field" data-netlify="true">
           <input type="hidden" name="bot-field" />
-          <label htmlFor="name">
+          <label htmlFor="name" aria-label="Name">
             <input
               type="text"
               id="name"
@@ -22,7 +22,7 @@ const ContactForm = () => {
               placeholder="Type your name"
             />
           </label>
-          <label htmlFor="email">
+          <label htmlFor="email" aria-label="Email">
             <input
               type="email"
               id="email"
@@ -30,7 +30,7 @@ const ContactForm = () => {
               placeholder="Type your email"
             />
           </label>
-          <label htmlFor="message">
+          <label htmlFor="message" aria-label="Message">
             <textarea
               name="message"
               id="message"
@@ -38,7 +38,7 @@ const ContactForm = () => {
             ></textarea>
           </label>
           <div className="btn__send">
-            <button type="submit" id="btn_submit">
+            <button aria-label="Send message" type="submit" id="btn_submit">
               <FaRegPaperPlane size="24px" />
               <span> Send</span>
             </button>

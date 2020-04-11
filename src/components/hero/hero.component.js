@@ -47,7 +47,11 @@ const Hero = () => {
             </h1>
           </div>
           <div className="hero-btn">
-            <button onClick={() => jump("#contact")} id="contact_btn">
+            <button
+              aria-label="Go to the contact section"
+              onClick={() => jump("#contact")}
+              id="contact_btn"
+            >
               <FaPlus /> Contact me
             </button>
             <span>

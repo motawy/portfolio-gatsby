@@ -10,22 +10,52 @@ const Menu = () => {
         <nav className="nav">
           <ul>
             <li>
-              <button onClick={() => jump("#home")}>Home</button>
+              <button
+                aria-label="Go to the home section"
+                onClick={() => jump("#home")}
+              >
+                Home
+              </button>
             </li>
             <li>
-              <button onClick={() => jump("#about")}>About me</button>
+              <button
+                aria-label="Go to the about section"
+                onClick={() => jump("#about")}
+              >
+                About me
+              </button>
             </li>
             <li>
-              <button onClick={() => jump("#resume")}>Resume</button>
+              <button
+                aria-label="Go to the resume section"
+                onClick={() => jump("#resume")}
+              >
+                Resume
+              </button>
             </li>
             <li>
-              <button onClick={() => jump("#services")}>Services</button>
+              <button
+                aria-label="Go to the services section"
+                onClick={() => jump("#services")}
+              >
+                Services
+              </button>
             </li>
             <li>
-              <button onClick={() => jump("#portfolio")}>Portfolio</button>
+              <button
+                aria-label="Go to the portfolio section"
+                onClick={() => jump("#portfolio")}
+              >
+                Portfolio
+              </button>
             </li>
             <li>
-              <button onClick={() => jump("#contact")}>Contact</button>
+              <button
+                aria-label="Go to the contact section"
+                onClick={() => jump("#contact")}
+              >
+                Contact
+              </button>
             </li>
           </ul>
         </nav>

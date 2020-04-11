@@ -32,6 +32,7 @@ const BurgerMenu = () => {
       <div
         className="burger-menu"
         role="button"
+        aria-label="Toggle menu"
         id="burger-menu"
         onClick={handleClick}
         onKeyDown={handleClick}

@@ -1,6 +1,5 @@
 import React from "react"
 import { FaLink } from "react-icons/fa"
-import Img from "gatsby-image"
 import "./element.styles.scss"
 
 const Element = ({ link, image, title }) => {
@@ -9,7 +8,7 @@ const Element = ({ link, image, title }) => {
       <div className="element-card">
         <a href={link} className="onHover">
           <div className="img">
-            <Img fluid={image} />
+            <img src="" />
           </div>
           <div className="details-wrap">
             <div className="details">

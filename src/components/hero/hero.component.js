@@ -1,25 +1,16 @@
 import React from "react"
 import { FaClock, FaPlus } from "react-icons/fa"
 import Mouse from "./mouse.svg"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 import jump from "jump.js"
 import TextLoop from "react-text-loop"
+import Img from "gatsby-image"
 import "./hero.styles.scss"
 
-const Hero = () => {
-  const { avatar } = useStaticQuery(graphql`
-    query {
-      avatar: file(relativePath: { eq: "hero/avatar.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
+const Hero = ({ data }) => {
+  console.log(data)
 
+  const { frontmatter } = data.nodes[0]
+  const { title, name, iam, contactButton, contactText, avatar } = frontmatter
   return (
     <section
       className="section-hero"
@@ -29,20 +20,16 @@ const Hero = () => {
       <div className="wrapper">
         <div className="left">
           <div className="hero-title">
-            <h1>
-              M<span>i</span>do
-              <br />
-              Tawy
-            </h1>
+            <h4>{title}</h4>
+            <h1>{name}</h1>
           </div>
           <div className="par" id="selector">
             <h1 className="ah-headline">
               I'm{" "}
               <TextLoop mask={true}>
-                <span>a Full-Stack Developer</span>
-                <span>a Cloud Lover </span>
-                <span>a Coffee Addict </span>
-                <span>a Boxing Enthusiast </span>
+                {iam.map(phrase => (
+                  <span key={phrase}>{phrase}</span>
+                ))}
               </TextLoop>{" "}
             </h1>
           </div>
@@ -52,10 +39,10 @@ const Hero = () => {
               onClick={() => jump("#contact")}
               id="contact_btn"
             >
-              <FaPlus /> Contact me
+              <FaPlus /> {contactButton}
             </button>
             <span>
-              <FaClock /> I'll get in touch with you ASAP.
+              <FaClock /> {contactText}
             </span>
           </div>
           <div className="about">

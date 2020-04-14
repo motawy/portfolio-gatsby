@@ -7,10 +7,15 @@ import Img from "gatsby-image"
 import "./hero.styles.scss"
 
 const Hero = ({ data }) => {
-  console.log(data)
-
   const { frontmatter } = data.nodes[0]
-  const { title, name, iam, contactButton, contactText, avatar } = frontmatter
+  const {
+    heroTitle,
+    heroName,
+    heroIam,
+    heroContactButton,
+    heroContactText,
+    heroAvatar,
+  } = frontmatter
   return (
     <section
       className="section-hero"
@@ -20,14 +25,14 @@ const Hero = ({ data }) => {
       <div className="wrapper">
         <div className="left">
           <div className="hero-title">
-            <h4>{title}</h4>
-            <h1>{name}</h1>
+            <h4>{heroTitle}</h4>
+            <h1>{heroName}</h1>
           </div>
           <div className="par" id="selector">
             <h1 className="ah-headline">
               I'm{" "}
               <TextLoop mask={true}>
-                {iam.map(phrase => (
+                {heroIam.map(phrase => (
                   <span key={phrase}>{phrase}</span>
                 ))}
               </TextLoop>{" "}
@@ -39,10 +44,10 @@ const Hero = ({ data }) => {
               onClick={() => jump("#contact")}
               id="contact_btn"
             >
-              <FaPlus /> {contactButton}
+              <FaPlus /> {heroContactButton}
             </button>
             <span>
-              <FaClock /> {contactText}
+              <FaClock /> {heroContactText}
             </span>
           </div>
           <div className="about">
@@ -52,7 +57,7 @@ const Hero = ({ data }) => {
           </div>
         </div>
         <div className="right">
-          <Img fluid={avatar.childImageSharp.fluid} className="img_fluid" />
+          <Img fluid={heroAvatar.childImageSharp.fluid} className="img_fluid" />
         </div>
       </div>
     </section>

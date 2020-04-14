@@ -14,7 +14,7 @@ import "./index.css"
 const IndexPage = ({ data }) => (
   <Layout>
     <Hero data={data.hero} />
-    <About />
+    <About data={data.about} />
     <Resume />
     <Services />
     <Portfolio />
@@ -27,17 +27,40 @@ IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export const heroQuery = graphql`
+export const pageQuery = graphql`
   {
     hero: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/hero/" } }) {
       nodes {
         frontmatter {
-          contactButton
-          contactText
-          iam
-          name
-          title
-          avatar {
+          heroContactButton
+          heroContactText
+          heroIam
+          heroName
+          heroTitle
+          heroAvatar {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+        }
+      }
+    }
+    about: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/about/" } }
+    ) {
+      nodes {
+        frontmatter {
+          aboutTitle
+          aboutText
+          aboutSubtitle
+          aboutStatus
+          aboutPhone
+          aboutLocation
+          aboutAge
+          aboutEmail
+          aboutImage {
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG

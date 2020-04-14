@@ -6,13 +6,13 @@ const AboutPersonal = ({ personalInfo }) => {
   return (
     <div className="about-personal-info">
       <div className="about-personal-info__column">
-        <AboutMedia title="Age" value={personalInfo.Age} />
-        <AboutMedia title="Location" value={personalInfo.Location} />
-        <AboutMedia title="E-mail" value={personalInfo.Email} />
+        <AboutMedia title="Age" value={personalInfo.aboutAge} />
+        <AboutMedia title="Location" value={personalInfo.aboutLocation} />
+        <AboutMedia title="E-mail" value={personalInfo.aboutEmail} />
       </div>
       <div className="about-personal-info__column">
-        <AboutMedia title="Phone" value={personalInfo.Phone} />
-        <AboutMedia title="Freelance" value={personalInfo.Status} />
+        <AboutMedia title="Phone" value={personalInfo.aboutPhone} />
+        <AboutMedia title="Freelance" value={personalInfo.aboutStatus} />
       </div>
     </div>
   )

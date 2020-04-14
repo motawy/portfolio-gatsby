@@ -12,21 +12,9 @@ const About = ({ data }) => {
     aboutTitle,
     aboutText,
     aboutSubtitle,
-    aboutStatus,
-    aboutPhone,
-    aboutLocation,
-    aboutAge,
-    aboutEmail,
+    aboutInfo,
     aboutImage,
   } = frontmatter
-
-  const personalInfo = {
-    Age: aboutAge,
-    Email: aboutEmail,
-    Phone: aboutPhone,
-    Location: aboutLocation,
-    Status: aboutStatus,
-  }
 
   return (
     <section className="about-section" id="about">
@@ -52,7 +40,7 @@ const About = ({ data }) => {
               <p>{aboutSubtitle}</p>
             </div>
             <AboutText text={aboutText} />
-            <AboutPersonal personalInfo={personalInfo} />
+            <AboutPersonal personalInfo={aboutInfo} />
             <AboutCV />
           </div>
         </div>

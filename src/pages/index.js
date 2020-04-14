@@ -3,7 +3,6 @@ import Layout from "../components/layout/layout.component"
 import About from "../components/about/about.component"
 import Hero from "../components/hero/hero.component"
 import Resume from "../components/resume/resume.component"
-import Services from "../components/services/services.component"
 import Portfolio from "../components/portfolio/portfolio.component"
 import Contact from "../components/contact/contact.component"
 import Footer from "../components/footer/footer.component"
@@ -16,7 +15,6 @@ const IndexPage = ({ data }) => (
     <Hero data={data.hero} />
     <About data={data.about} />
     <Resume data={data.resume} />
-    <Services />
     <Portfolio />
     <Contact />
     <Footer />
@@ -55,11 +53,13 @@ export const pageQuery = graphql`
           aboutTitle
           aboutText
           aboutSubtitle
-          aboutStatus
-          aboutPhone
-          aboutLocation
-          aboutAge
-          aboutEmail
+          aboutInfo {
+            aboutAge
+            aboutEmail
+            aboutLocation
+            aboutPhone
+            aboutStatus
+          }
           aboutImage {
             childImageSharp {
               fluid {

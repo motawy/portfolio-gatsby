@@ -11,10 +11,12 @@ aboutText: "Four years ago, I decided to pursue my passion for IT and decided to
   developing new products and improving the quality of existing ones,
   working in teams to iterate and improve the experiences that reach
   business goals."
-aboutAge: 31
-aboutLocation: "Australia"
-aboutEmail: "hello@motawy.me"
-aboutPhone: "+61 402 671 497"
-aboutStatus: "Available"
 aboutImage: "./img/about.jpg"
+
+aboutInfo:
+  aboutAge: 31
+  aboutLocation: "Australia"
+  aboutEmail: "hello@motawy.me"
+  aboutPhone: "+61 402 671 497"
+  aboutStatus: "Available"
 ---

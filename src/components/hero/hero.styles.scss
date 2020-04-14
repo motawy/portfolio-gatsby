@@ -23,7 +23,7 @@
         h1 {
           color: #111;
           text-transform: uppercase;
-          font-size: 67px;
+          font-size: 72px;
           background-color: #eee;
           // background-image: url("../../../content/images/hero/q1.png");
           background-size: 80px;
@@ -49,7 +49,9 @@
       }
       .par {
         max-width: 520px;
-
+        .headline {
+          line-height: 48px;
+        }
         p {
           line-height: 32px;
           font-size: 16px;

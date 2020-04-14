@@ -34,7 +34,6 @@ export const pageQuery = graphql`
           heroContactText
           heroIam
           heroName
-          heroTitle
           heroAvatar {
             childImageSharp {
               fluid {

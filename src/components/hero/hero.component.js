@@ -9,13 +9,14 @@ import "./hero.styles.scss"
 const Hero = ({ data }) => {
   const { frontmatter } = data.nodes[0]
   const {
-    heroTitle,
     heroName,
     heroIam,
     heroContactButton,
     heroContactText,
     heroAvatar,
   } = frontmatter
+
+  const name = heroName.split(" ")
   return (
     <section
       className="section-hero"
@@ -25,11 +26,14 @@ const Hero = ({ data }) => {
       <div className="wrapper">
         <div className="left">
           <div className="hero-title">
-            <h4>{heroTitle}</h4>
-            <h1>{heroName}</h1>
+            <h1>
+              {name[0]}
+              <br />
+              {name[1]}
+            </h1>
           </div>
           <div className="par" id="selector">
-            <h1 className="ah-headline">
+            <h1 className="headline">
               I'm{" "}
               <TextLoop mask={true}>
                 {heroIam.map(phrase => (

@@ -35,14 +35,6 @@ const Menu = () => {
             </li>
             <li>
               <button
-                aria-label="Go to the services section"
-                onClick={() => jump("#services")}
-              >
-                Services
-              </button>
-            </li>
-            <li>
-              <button
                 aria-label="Go to the portfolio section"
                 onClick={() => jump("#portfolio")}
               >

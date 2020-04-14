@@ -17,6 +17,7 @@
   -o-transition: all 0.3s;
   transition: all 0.3s;
   background-color: #222;
+  z-index: 1;
 
   .wrap {
     display: -webkit-box;

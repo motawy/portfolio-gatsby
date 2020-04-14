@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <Hero data={data.hero} />
     <About data={data.about} />
-    <Resume />
+    <Resume data={data.resume} />
     <Services />
     <Portfolio />
     <Contact />
@@ -66,6 +66,24 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
+          }
+        }
+      }
+    }
+    resume: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/resume/" } }
+    ) {
+      nodes {
+        frontmatter {
+          education {
+            description
+            title
+            years
+          }
+          work {
+            description
+            title
+            years
           }
         }
       }

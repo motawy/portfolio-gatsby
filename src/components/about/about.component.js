@@ -34,7 +34,7 @@ const About = ({ data }) => {
         <TitleSection
           firstPart="About"
           secondPart="me"
-          description="Full-Stack Developer based in Australia"
+          description="Software Engineer, based in Australia"
         />
         <div className="about-container">
           <div className="about-pic">

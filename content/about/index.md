@@ -1,6 +1,6 @@
 ---
 aboutTitle: "Hi, I'm Mido"
-aboutSubtitle: "Software Engineer, based in Australia"
+aboutSubtitle: "Who am I?"
 aboutText: "Four years ago, I decided to pursue my passion for IT and decided to
   finish my studies. After that, it has been a roller coaster in terms of
   learning, opportunities, amazing colleagues and friends that I met and

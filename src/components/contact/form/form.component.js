@@ -2,14 +2,14 @@ import React from "react"
 import { FaRegPaperPlane } from "react-icons/fa"
 import "./form.styles.scss"
 
-const ContactForm = () => {
+const ContactForm = ({ form }) => {
   return (
     <div className="contact-form">
       <div className="form-title">
-        <span>How can I help you ?</span>
+        <span>{form.title}</span>
       </div>
       <div className="form-subtitle">
-        <span>Fill out this form we'll contact back shortly.</span>
+        <span>{form.subtitle}</span>
       </div>
       <div className="form">
         <form method="post" netlify-honeypot="bot-field" data-netlify="true">
@@ -40,7 +40,7 @@ const ContactForm = () => {
           <div className="btn__send">
             <button aria-label="Send message" type="submit" id="btn_submit">
               <FaRegPaperPlane size="24px" />
-              <span> Send</span>
+              <span>{form.button}</span>
             </button>
           </div>
         </form>

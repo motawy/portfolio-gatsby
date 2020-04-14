@@ -7,7 +7,12 @@ const Element = ({ link, image, title, description, tech }) => {
   return (
     <div className="element-container">
       <div className="element-card">
-        <a href={link} className="onHover">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="onHover"
+        >
           <div className="img">
             <Img fluid={image} />
           </div>

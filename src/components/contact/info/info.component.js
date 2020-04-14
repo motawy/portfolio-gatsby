@@ -1,24 +1,21 @@
 import React from "react"
 import "./info.styles.scss"
 
-const Info = () => {
+const Info = ({ info }) => {
   return (
     <div className="contact-info">
       <div className="info-title">
-        <span>Let’s Get in touch!</span>
+        <span>{info.title}</span>
       </div>
       <div className="info-subtitle">
-        <span>
-          I am always open to talk about projects or possible collaborations.
-          Leave me a message here or contact me through the other channels.
-        </span>
+        <span>{info.subtitle}</span>
       </div>
       <div className="block-info">
         <div className="block-info__item">
-          Location: <span>Melbourne, AU</span>
+          Location: <span>{info.location}</span>
         </div>
         <div className="block-info__item">
-          E-mail: <span>hello@motawy.me</span>
+          E-mail: <span>{info.email}</span>
         </div>
       </div>
     </div>

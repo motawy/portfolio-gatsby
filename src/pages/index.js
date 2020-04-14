@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => (
     <About data={data.about} />
     <Resume data={data.resume} />
     <Portfolio data={data.portfolio} />
-    <Contact />
+    <Contact data={data.contact} />
     <Footer />
   </Layout>
 )
@@ -105,6 +105,25 @@ export const pageQuery = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+    contact: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/contact/" } }
+    ) {
+      nodes {
+        frontmatter {
+          form {
+            button
+            subtitle
+            title
+          }
+          info {
+            email
+            location
+            subtitle
+            title
           }
         }
       }

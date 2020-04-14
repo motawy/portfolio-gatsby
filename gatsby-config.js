@@ -2,9 +2,11 @@ module.exports = {
   siteMetadata: {
     title: "MIDO. | Portfolio",
     description:
-      "Welcome to my portfolio website. My name is Mohammed Tantawy and I'm a Full-Stack Developer, Cloud Engineer and Data Analyst.",
+      "Mohammed Tantawy, also known as Mido Tawy, is a Software Engineer based in Australia, who specializes in developing high quality applications.",
     author: "Mohammed Tantawy",
     url: "https://motawy.me",
+    keywords:
+      "Mohammed Tantawy, Mido Tawy, Tantawy, motawy, software engineer, full-stack developer, javascript, cloud developer",
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -12,6 +14,15 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Mohammed Tantawy",
+        short_name: "Mido Tawy",
+        start_url: "/",
+        icon: "./static/favicon.ico",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

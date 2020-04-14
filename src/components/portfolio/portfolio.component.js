@@ -3,7 +3,11 @@ import TitleSection from "../title-section/title-section.component"
 import Element from "./element/element.component"
 import "./portfolio.styles.scss"
 
-const Portfolio = () => {
+const Portfolio = ({ data }) => {
+  const {
+    frontmatter: { myWork },
+  } = data.nodes[0]
+
   return (
     <section className="portfolio-section" id="portfolio">
       <div className="portfolio-wrapper">
@@ -14,26 +18,16 @@ const Portfolio = () => {
         />
         <div>
           <div className="portfolio">
-            <Element
-              link="https://github.com/motawy/crwn-clothing"
-              image=""
-              title="CRWN CLOTHING"
-            />
-            <Element
-              link="https://github.com/motawy/giga-ball"
-              image=""
-              title="GIGA BALL"
-            />
-            <Element
-              link="https://github.com/motawy/get-me-there"
-              image=""
-              title="GET ME THERE"
-            />
-            <Element
-              link="https://github.com/motawy/smart-brain"
-              image=""
-              title="SMART BRAIN"
-            />
+            {myWork.map((element, key) => (
+              <Element
+                key={key}
+                link={element.link}
+                image={element.image.childImageSharp.fluid}
+                title={element.title}
+                description={element.shortDescription}
+                tech={element.techUsed}
+              />
+            ))}
           </div>
         </div>
       </div>

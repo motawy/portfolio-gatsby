@@ -36,6 +36,23 @@
     }
     .details-descr {
       padding: 24px;
+      .descr {
+        font-size: 1.2rem;
+      }
+      .tech-used {
+        margin-top: 16px;
+        position: absolute;
+        bottom: 16px;
+        left: 0;
+
+        span {
+          margin: 0 16px;
+          padding: 5px;
+          background-color: #333;
+          color: #f2d367;
+          border-radius: 20px;
+        }
+      }
     }
   }
 

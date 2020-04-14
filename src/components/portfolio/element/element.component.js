@@ -1,14 +1,15 @@
 import React from "react"
 import { FaLink } from "react-icons/fa"
+import Img from "gatsby-image"
 import "./element.styles.scss"
 
-const Element = ({ link, image, title }) => {
+const Element = ({ link, image, title, description, tech }) => {
   return (
     <div className="element-container">
       <div className="element-card">
         <a href={link} className="onHover">
           <div className="img">
-            <img src="" />
+            <Img fluid={image} />
           </div>
           <div className="details-wrap">
             <div className="details">
@@ -16,12 +17,15 @@ const Element = ({ link, image, title }) => {
                 <span>{title}</span>
               </div>
               <div className="details-descr">
-                <span>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Magni temporibus delectus culpa incidunt tempora vero quae,
-                  perferendis excepturi aperiam similique dignissimos ipsam
-                  doloribus cumque quod porro aut debitis quisquam possimus!
-                </span>
+                <p className="descr">{description}</p>
+                <div className="tech-used">
+                  {tech.map((t, i) => (
+                    <span key={i}>
+                      {t}
+                      {"  "}
+                    </span>
+                  ))}
+                </div>
               </div>
               <div className="details-btn">
                 <FaLink color="#f2d367" />

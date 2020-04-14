@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => (
     <Hero data={data.hero} />
     <About data={data.about} />
     <Resume data={data.resume} />
-    <Portfolio />
+    <Portfolio data={data.portfolio} />
     <Contact />
     <Footer />
   </Layout>
@@ -84,6 +84,27 @@ export const pageQuery = graphql`
             description
             title
             years
+          }
+        }
+      }
+    }
+    portfolio: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/my-work/" } }
+    ) {
+      nodes {
+        frontmatter {
+          myWork {
+            title
+            techUsed
+            shortDescription
+            link
+            image {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
         }
       }

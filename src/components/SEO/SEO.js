@@ -22,6 +22,7 @@ const SEO = () => {
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
+      {seo.keywords && <meta property="og:keywords" content={seo.keywords} />}
     </Helmet>
   )
 }
@@ -50,6 +51,7 @@ const query = graphql`
         description
         author
         url
+        keywords
       }
     }
   }

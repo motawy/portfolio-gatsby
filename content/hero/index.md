@@ -1,6 +1,7 @@
 ---
-heroTitle: "Hi, my name is"
+heroStart: "Hi, my name is"
 heroName: "Mido Tawy"
+heroPhrase: "I build amazing things for the web"
 heroIam:
   - "a Software Engineer"
   - "a Cloud Developer"
@@ -8,6 +9,5 @@ heroIam:
   - "a Motorcycles lover"
   - "a Boxing Enthusiast"
 heroContactButton: "Contact me"
-heroContactText: " And I will get in touch with you ASAP."
-heroAvatar: "./img/avatar.png"
+heroShortBio: "I'm a software engineer based in Melbourne, AU specializing in building  websites and applications."
 ---

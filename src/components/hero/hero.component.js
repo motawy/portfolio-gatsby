@@ -1,70 +1,37 @@
 import React from "react"
-import { FaClock, FaPlus } from "react-icons/fa"
-import Mouse from "./mouse.svg"
+import { FaPlus } from "react-icons/fa"
 import jump from "jump.js"
-import TextLoop from "react-text-loop"
-import Img from "gatsby-image"
-import "./hero.styles.scss"
+import {
+  SectionHero,
+  Wrapper,
+  HeroTitle,
+  HeroButton,
+  HeroPhrase,
+  ContactButton,
+} from "../../styles/hero"
 
 const Hero = ({ data }) => {
   const { frontmatter } = data.nodes[0]
-  const {
-    heroName,
-    heroIam,
-    heroContactButton,
-    heroContactText,
-    heroAvatar,
-  } = frontmatter
+  const { heroStart, heroName, heroContactButton, heroPhrase } = frontmatter
 
-  const name = heroName.split(" ")
   return (
-    <section
-      className="section-hero"
-      id="home"
-      style={{ backgroundColor: "#eee" }}
-    >
-      <div className="wrapper">
-        <div className="left">
-          <div className="hero-title">
-            <h1>
-              {name[0]}
-              <br />
-              {name[1]}
-            </h1>
-          </div>
-          <div className="par" id="selector">
-            <h1 className="headline">
-              I'm{" "}
-              <TextLoop mask={true}>
-                {heroIam.map(phrase => (
-                  <span key={phrase}>{phrase}</span>
-                ))}
-              </TextLoop>{" "}
-            </h1>
-          </div>
-          <div className="hero-btn">
-            <button
-              aria-label="Go to the contact section"
-              onClick={() => jump("#contact")}
-              id="contact_btn"
-            >
-              <FaPlus /> {heroContactButton}
-            </button>
-            <span>
-              <FaClock /> {heroContactText}
-            </span>
-          </div>
-          <div className="about">
-            <button onClick={() => jump("#about")} id="to_about">
-              <img src={Mouse} alt="Scroll down" />
-            </button>
-          </div>
-        </div>
-        <div className="right">
-          <Img fluid={heroAvatar.childImageSharp.fluid} className="img_fluid" />
-        </div>
-      </div>
-    </section>
+    <SectionHero id="home">
+      <Wrapper>
+        <HeroTitle>
+          <h4>{heroStart}</h4>
+          <h1>{heroName}</h1>
+          <HeroPhrase>{heroPhrase}</HeroPhrase>
+        </HeroTitle>
+        <HeroButton>
+          <ContactButton
+            aria-label="Go to the contact section"
+            onClick={() => jump("#contact")}
+          >
+            <FaPlus /> {heroContactButton}
+          </ContactButton>
+        </HeroButton>
+      </Wrapper>
+    </SectionHero>
   )
 }
 

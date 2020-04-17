@@ -31,16 +31,11 @@ export const pageQuery = graphql`
       nodes {
         frontmatter {
           heroContactButton
-          heroContactText
+          heroShortBio
           heroIam
           heroName
-          heroAvatar {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
-            }
-          }
+          heroStart
+          heroPhrase
         }
       }
     }

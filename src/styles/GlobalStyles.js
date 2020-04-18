@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components"
+import ColorsYml from "@config/colors.yml"
+
+const GlobalStyles = createGlobalStyle`
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -5,6 +9,8 @@ html {
 body {
   margin: 0;
   letter-spacing: 0.8px;
+  height: 100vh;
+  background-color: ${ColorsYml.backgroundColor};
 }
 
 main {
@@ -176,13 +182,7 @@ template {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  /* background-color: rgb(22, 27, 38); */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-html,
-body {
-  height: 100vh;
 }
 
 #error-page {
@@ -320,3 +320,6 @@ a.btn.white {
 a.btn.white:hover {
   border-color: transparent;
 }
+`
+
+export default GlobalStyles

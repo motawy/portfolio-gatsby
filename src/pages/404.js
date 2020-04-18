@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout/layout.component"
-import "./index.css"
 
 const NotFound = () => {
   return (

@@ -9,7 +9,6 @@ import Contact from "../components/contact/contact.component"
 import Footer from "../components/footer/footer.component"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import "./index.css"
 
 const IndexPage = ({ data }) => (
   <Layout>

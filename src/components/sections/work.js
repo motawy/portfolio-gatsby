@@ -11,7 +11,7 @@ import {
   WorkTitle,
   Company,
   WorkDetails,
-} from "../../styles/work"
+} from "@styles/WorkStyles"
 
 const Work = ({ data }) => {
   const [activeTabId, setActiveTabId] = useState(0)

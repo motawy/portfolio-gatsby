@@ -1,11 +1,12 @@
 import React from "react"
 import Header from "../header/header.component"
-import "./layout.styles.scss"
 import SEO from "../SEO/SEO"
+import GlobalStyles from "@styles/GlobalStyles"
 
 const Layout = ({ children }) => {
   return (
     <div className="main-class">
+      <GlobalStyles />
       <SEO />
       <Header />
       {children}

@@ -11,7 +11,7 @@ aboutText: "Four years ago, I decided to pursue my passion for IT and decided to
   developing new products and improving the quality of existing ones,
   working in teams to iterate and improve the experiences that reach
   business goals."
-aboutImage: "./img/about.jpg"
+aboutImage: "./img/about.png"
 
 aboutInfo:
   aboutAge: 31

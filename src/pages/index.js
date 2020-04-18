@@ -2,7 +2,8 @@ import React from "react"
 import Layout from "../components/layout/layout.component"
 import About from "../components/about/about.component"
 import Hero from "../components/hero/hero.component"
-import Resume from "../components/resume/resume.component"
+// import Resume from "../components/resume/resume.component"
+import Work from "../components/sections/work"
 import Portfolio from "../components/portfolio/portfolio.component"
 import Contact from "../components/contact/contact.component"
 import Footer from "../components/footer/footer.component"
@@ -14,7 +15,8 @@ const IndexPage = ({ data }) => (
   <Layout>
     <Hero data={data.hero} />
     <About data={data.about} />
-    <Resume data={data.resume} />
+    {/* <Resume data={data.resume} /> */}
+    <Work data={data.resume} />
     <Portfolio data={data.portfolio} />
     <Contact data={data.contact} />
     <Footer />

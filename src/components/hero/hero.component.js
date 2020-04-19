@@ -34,7 +34,6 @@ const Hero = ({ data }) => {
 
 const SectionHero = styled.section`
   padding: 0;
-  background-color: ${colors.bgDark};
   color: ${colors.light};
   height: 100vh;
 `
@@ -55,7 +54,9 @@ const HeroTitle = styled.div`
   h4 {
     font-size: 28px;
     font-weight: 300;
-    ${media.tablet`font-size: 20px`}
+    ${media.bigDesktop`font-size: 20px`}
+    ${media.desktop`font-size: 18px`}
+    ${media.tablet`font-size: 14px`}
   }
   h1 {
     color: ${colors.accent};
@@ -65,7 +66,14 @@ const HeroTitle = styled.div`
     margin-bottom: -32px;
     font-weight: 300;
     font-family: "SignPainter";
-    ${media.giant`font-size: 80px`}
+    white-space: nowrap;
+    ${media.bigDesktop`font-size: 140px`}
+    ${media.desktop`
+        font-size: 120px;
+        margin-top: 0;
+        margin-bottom: -16px;
+    `}
+    ${media.tablet`font-size: 96px`}
     &:before {
       content: "";
       display: block;
@@ -88,7 +96,9 @@ const HeroPhrase = styled.h3`
   margin: 0;
   font-size: 28px;
   font-weight: 300;
-  ${media.tablet`font-size: 20px`}
+  ${media.bigDesktop`font-size: 20px`}
+  ${media.desktop`font-size: 18px`}
+  ${media.tablet`font-size: 14px`}
 `
 
 const HeroButton = styled.div`

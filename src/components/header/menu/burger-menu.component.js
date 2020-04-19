@@ -48,8 +48,8 @@ const BurgerMenu = () => {
 }
 
 const BurgerContainer = styled.div`
-  top: 20px;
-  right: 30px;
+  top: 0;
+  right: 0;
   position: absolute;
   width: 40px;
   height: 40px;

@@ -47,7 +47,6 @@ export const pageQuery = graphql`
         frontmatter {
           aboutTitle
           aboutText
-          aboutSubtitle
           aboutInfo {
             aboutAge
             aboutEmail

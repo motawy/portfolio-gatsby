@@ -1,3 +1,4 @@
-backgroundColor: "#201e33"
-primaryColor: "#fefeff"
-accentColor: "#f87a01"
+bgDark: "#303841"
+dark: "#3a4750"
+accent: "#f6c90e"
+light: "#eeeeee"

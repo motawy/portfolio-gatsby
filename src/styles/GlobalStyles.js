@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import ColorsYml from "@config/colors.yml"
+import colors from "@config/colors.yml"
 
 const GlobalStyles = createGlobalStyle`
 html {
@@ -10,7 +10,8 @@ body {
   margin: 0;
   letter-spacing: 0.8px;
   height: 100vh;
-  background-color: ${ColorsYml.backgroundColor};
+  width: 100vw;
+  background-color: ${colors.bgDark};
 }
 
 main {
@@ -116,16 +117,6 @@ fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-legend {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
-}
-
 progress {
   vertical-align: baseline;
 }
@@ -188,7 +179,7 @@ template {
 #error-page {
   height: 92vh;
   height: calc(100vh - 80px);
-  width: 100%;
+  width: 100vw;
   padding: 80px;
   /* background-position: center center;
   background-size: cover;
@@ -268,7 +259,7 @@ h1.big {
 }
 
 .light-paragraph {
-  color: #ccc;
+  color: ${colors.light};
   margin-top: 24px;
   margin-bottom: 36px;
 }
@@ -296,8 +287,8 @@ a.btn {
 }
 
 a.btn:hover {
-  background-color: #f2d367;
-  color: #222 !important;
+  background-color: ${colors.dark};
+  color: ${colors.light}!important; 
   border-color: transparent;
 }
 

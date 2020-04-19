@@ -3,8 +3,8 @@ import styled from "styled-components"
 import SocialLinks from "./social-links/social-links.components"
 import BurgerMenu from "./menu/burger-menu.component"
 import media from "@styles/media"
-import NavYML from "@config/nav.yml"
-import Colors from "@config/colors.yml"
+import navigation from "@config/nav.yml"
+import colors from "@config/colors.yml"
 
 const Header = () => {
   return (
@@ -17,8 +17,8 @@ const Header = () => {
         </Logo>
         <NavContainer>
           <NavList>
-            {NavYML &&
-              NavYML.navLinks.map(({ name, url }, key) => {
+            {navigation &&
+              navigation.navLinks.map(({ name, url }, key) => {
                 return (
                   <NavListItem key={key}>
                     <NavLink href={url}>{name}</NavLink>
@@ -44,7 +44,7 @@ const NavPart = styled.header`
   align-items: center;
   top: 0;
   padding: 0px 50px;
-  width: 100%;
+  width: 100vw;
   height: 80px;
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`};
@@ -68,7 +68,7 @@ const Logo = styled.div`
     font-size: 40px;
     font-family: "SignPainter";
     line-height: 48px;
-    color: ${Colors.primaryColor};
+    color: ${colors.accent};
     text-decoration: none;
   }
 `
@@ -91,21 +91,21 @@ const NavList = styled.ul`
 const NavListItem = styled.li`
   margin: 0 10px;
   position: relative;
-  font-size: 16px;
+  font-size: 18px;
 `
 
 const NavLink = styled.a`
   padding: 12px 10px;
   text-decoration: none;
-  color: ${Colors.primaryColor};
+  color: ${colors.light};
   position: relative;
   display: inline-block;
   overflow: hidden;
   background: linear-gradient(
     to right,
-    ${Colors.accentColor},
-    ${Colors.accentColor} 50%,
-    ${Colors.primaryColor} 50%
+    ${colors.accent},
+    ${colors.accent} 50%,
+    ${colors.light} 50%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -119,9 +119,9 @@ const NavLink = styled.a`
   transition: all 0.3s ease;
   &:hover {
     background-position: 0 100%;
-    -webkit-transform: scale(1.1, 1.1);
-    -ms-transform: scale(1.1, 1.1);
-    transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
   }
 `
 

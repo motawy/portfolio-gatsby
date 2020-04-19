@@ -2,7 +2,7 @@ import React from "react"
 import Social from "../social/social.component"
 import styled from "styled-components"
 import media from "@styles/media"
-import Colors from "@config/colors.yml"
+import colors from "@config/colors.yml"
 
 const SocialLinks = () => {
   return (
@@ -40,7 +40,7 @@ const SocialSpan = styled.span`
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
-  color: ${Colors.primaryColor};
+  color: ${colors.light};
 
   &:after {
     content: "";
@@ -50,7 +50,7 @@ const SocialSpan = styled.span`
     height: 1px;
     display: block;
     position: absolute;
-    background-color: ${Colors.primaryColor};
+    background-color: ${colors.light};
   }
 `
 

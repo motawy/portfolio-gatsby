@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import AboutPersonal from "./about-personal/about-personal.component"
 import AboutCV from "./about-cv/about-cv.component"
 import AboutText from "./about-text/about-text.component"
 import TitleSection from "../title-section/title-section.component"
 import Img from "gatsby-image"
+import sr from "@utils/sr"
+import srConfig from "@utils/srConfig"
 import "./about.styles.scss"
 
 const About = ({ data }) => {
@@ -15,9 +17,11 @@ const About = ({ data }) => {
     aboutInfo,
     aboutImage,
   } = frontmatter
+  const revealContainer = useRef(null)
+  useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
 
   return (
-    <section className="about-section" id="about">
+    <section className="about-section" id="about" ref={revealContainer}>
       <div className="about-wrapper">
         <TitleSection
           firstPart="About"

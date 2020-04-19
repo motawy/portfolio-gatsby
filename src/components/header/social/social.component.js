@@ -51,7 +51,7 @@ const Social = ({ size }) => {
 }
 
 const SocialItem = styled.li`
-  color: ${Colors.primaryColor};
+  color: ${Colors.light};
   list-style: none;
   margin-bottom: 24px;
   font-size: 16px;
@@ -61,11 +61,11 @@ const SocialItem = styled.li`
   transition: all 0.3s ease;
   a {
     text-decoration: none;
-    color: ${Colors.primaryColor};
+    color: ${Colors.light};
   }
 
   a:hover {
-    color: ${Colors.accentColor};
+    color: ${Colors.accent};
   }
 
   &:hover {

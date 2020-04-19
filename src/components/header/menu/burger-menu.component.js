@@ -1,6 +1,8 @@
 import React from "react"
 import Menu from "./menu.component"
-import "./burger-menu.styles.scss"
+import styled from "styled-components"
+import colors from "@config/colors.yml"
+import media from "@styles/media"
 
 const BurgerMenu = () => {
   const handleClick = () => {
@@ -28,8 +30,8 @@ const BurgerMenu = () => {
   }
 
   return (
-    <div>
-      <div
+    <>
+      <BurgerContainer
         className="burger-menu"
         role="button"
         aria-label="Toggle menu"
@@ -38,11 +40,65 @@ const BurgerMenu = () => {
         onKeyDown={handleClick}
         tabIndex="0"
       >
-        <span></span>
-      </div>
+        <BurgerBox></BurgerBox>
+      </BurgerContainer>
       <Menu />
-    </div>
+    </>
   )
 }
+
+const BurgerContainer = styled.div`
+  top: 20px;
+  right: 30px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: none;
+  ${media.tablet`display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  `};
+`
+
+const BurgerBox = styled.div`
+  width: 24px;
+  height: 2px;
+  display: block;
+  position: relative;
+  background-color: ${colors.light};
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: ${colors.light};
+    width: 24px;
+    height: 2px;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+  }
+
+  &:before {
+    top: -9px;
+  }
+
+  &:after {
+    bottom: -9px;
+  }
+`
 
 export default BurgerMenu

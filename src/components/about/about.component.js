@@ -45,6 +45,8 @@ const About = ({ data }) => {
   )
 }
 
+// Styles
+
 const AboutSection = styled.section`
   padding: 0 120px;
   ${media.bigDesktop`

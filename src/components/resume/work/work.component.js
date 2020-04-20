@@ -1,14 +1,16 @@
 import React from "react"
 import TimelineItem from "../timeline-item/timeline-item.component"
-import "./work.styles.scss"
+import styled from "styled-components"
+import colors from "@config/colors.yml"
+import media from "@styles/media"
 
 const Work = ({ work }) => {
   return (
-    <div className="experience">
-      <div className="work-title">
+    <WorkContainer>
+      <WorkTitle>
         <h4>Experience</h4>
-      </div>
-      <div className="work-timeline">
+      </WorkTitle>
+      <WorkTimeine>
         {work.map((item, key) => (
           <TimelineItem
             key={key}
@@ -17,9 +19,34 @@ const Work = ({ work }) => {
             description={item.description}
           />
         ))}
-      </div>
-    </div>
+      </WorkTimeine>
+    </WorkContainer>
   )
 }
+
+const WorkContainer = styled.div`
+  flex: 2;
+  ${media.tablet`
+    padding-top: 40px;
+  `}
+`
+
+const WorkTitle = styled.div`
+  padding-bottom: 40px;
+  h4 {
+    text-transform: uppercase;
+    color: ${colors.accent};
+    font-size: 24px;
+    font-weight: 600;
+  }
+`
+
+const WorkTimeine = styled.div`
+  border-left: 2px dotted ${colors.dimText};
+  padding: 0 30px 0 30px;
+  li {
+    list-style: none;
+  }
+`
 
 export default Work

@@ -51,6 +51,9 @@ const Wrapper = styled.div`
 
 const HeroTitle = styled.div`
   margin-top: 150px;
+  ${media.tablet`
+    margin-top: 240px;
+  `}
   h4 {
     font-size: 28px;
     font-weight: 300;

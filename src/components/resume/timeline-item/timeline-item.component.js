@@ -1,18 +1,55 @@
 import React from "react"
-import "./timeline-item.styles.scss"
+import styled from "styled-components"
+import colors from "@config/colors.yml"
 
 const TimelineItem = ({ title, years, description }) => {
   return (
     <>
-      <div className="timeline-title">
+      <TimeLineTitle>
         <h5>{title}</h5>
         <span>{years}</span>
-      </div>
-      <div className="timeline-text">
+      </TimeLineTitle>
+      <TimeLineText>
         <p>{description}</p>
-      </div>
+      </TimeLineText>
     </>
   )
 }
+
+const TimeLineTitle = styled.div`
+  h5 {
+    color: ${colors.light};
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 8px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      border-radius: 15px;
+      background-color: ${colors.accent};
+      left: -43px;
+    }
+  }
+
+  span {
+    color: ${colors.dimText};
+    font-size: 15px;
+  }
+`
+
+const TimeLineText = styled.div`
+  padding: 30px 0 50px;
+  p {
+    color: ${colors.dimText};
+    font-size: 0.9rem;
+    line-height: 24px;
+  }
+`
 
 export default TimelineItem

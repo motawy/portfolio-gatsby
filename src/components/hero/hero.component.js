@@ -104,7 +104,6 @@ const HeroPhrase = styled.h3`
 const HeroButton = styled.div`
   margin-top: 28px;
   ${media.giant`margin-top: 50px`}
-  ${media.smallTablet`margin-top: 50px`}
 `
 
 const ContactButton = styled.button`

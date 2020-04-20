@@ -1,21 +1,46 @@
 import React from "react"
 import AboutMedia from "../about-media/about-media.component"
-import "./about-personal.styles.scss"
+import styled from "styled-components"
+import media from "@styles/media"
 
 const AboutPersonal = ({ personalInfo }) => {
   return (
-    <div className="about-personal-info">
-      <div className="about-personal-info__column">
+    <AboutPersonalInfo>
+      <AboutPersonalColumn>
         <AboutMedia title="Age" value={personalInfo.aboutAge} />
         <AboutMedia title="Location" value={personalInfo.aboutLocation} />
         <AboutMedia title="E-mail" value={personalInfo.aboutEmail} />
-      </div>
-      <div className="about-personal-info__column">
+      </AboutPersonalColumn>
+      <AboutPersonalColumn>
         <AboutMedia title="Phone" value={personalInfo.aboutPhone} />
         <AboutMedia title="Freelance" value={personalInfo.aboutStatus} />
-      </div>
-    </div>
+      </AboutPersonalColumn>
+    </AboutPersonalInfo>
   )
 }
+
+const AboutPersonalInfo = styled.div`
+  padding: 30px 0 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  ${media.desktop`
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  `}
+`
+
+const AboutPersonalColumn = styled.div`
+  &:last-child {
+    padding-left: 40px;
+  }
+  ${media.desktop`
+    &:last-child {
+        padding-left: 0;
+      }
+  `}
+`
 
 export default AboutPersonal

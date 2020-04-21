@@ -1,17 +1,19 @@
 import React from "react"
 import { FaRegPaperPlane } from "react-icons/fa"
-import "./form.styles.scss"
+import styled from "styled-components"
+import colors from "@config/colors.yml"
+import media from "@styles/media"
 
 const ContactForm = ({ form }) => {
   return (
-    <div className="contact-form">
-      <div className="form-title">
+    <FormContainer>
+      <Title>
         <span>{form.title}</span>
-      </div>
-      <div className="form-subtitle">
+      </Title>
+      <Subtitle>
         <span>{form.subtitle}</span>
-      </div>
-      <div className="form">
+      </Subtitle>
+      <Form className="form">
         <form method="post" netlify-honeypot="bot-field" data-netlify="true">
           <input type="hidden" name="bot-field" />
           <label htmlFor="name" aria-label="Name">
@@ -38,15 +40,130 @@ const ContactForm = ({ form }) => {
             ></textarea>
           </label>
           <div className="btn__send">
-            <button aria-label="Send message" type="submit" id="btn_submit">
+            <SubmitButton
+              aria-label="Send message"
+              type="submit"
+              id="btn_submit"
+            >
               <FaRegPaperPlane size="24px" />
               <span>{form.button}</span>
-            </button>
+            </SubmitButton>
           </div>
         </form>
-      </div>
-    </div>
+      </Form>
+    </FormContainer>
   )
 }
 
+// Styles
+
+const FormContainer = styled.div`
+  ${media.desktop`
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    margin-top: 40px;  
+  `}
+`
+const Title = styled.div`
+  margin-bottom: 16px;
+  span {
+    color: ${colors.light};
+    font-size: 24px;
+    font-weight: 600;
+  }
+`
+const Subtitle = styled.div`
+  span {
+    color: ${colors.dimText};
+    font-size: 0.9rem;
+    line-height: 24px;
+  }
+`
+const Form = styled.div`
+  padding-top: 40px;
+  padding-right: 40px;
+  form {
+    input {
+      color: ${colors.light};
+      background: none;
+      border: none;
+      outline: none;
+      width: 500px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid ${colors.accent};
+      margin-bottom: 30px;
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+        box-shadow: 0 0 0 30px #fff inset !important;
+      }
+    }
+    textarea {
+      background: none;
+      border: none;
+      outline: none;
+      width: 500px;
+      max-width: 500px;
+      min-height: 100px;
+      border-bottom: 1px solid ${colors.accent};
+      margin-bottom: 30px;
+      resize: vertical;
+    }
+    #winError {
+      padding-bottom: 10px;
+      color: #f03e3e;
+    }
+    ${media.tablet`
+        padding-right: 0;
+        form {
+          input {
+            width: 100%;
+          }
+          textarea {
+            width: 100%;
+          }
+        }
+    `}
+  }
+`
+const SubmitButton = styled.button`
+  cursor: pointer;
+  border: 1px solid ${colors.accent};
+  border-radius: 25px;
+  padding: 15px 25px;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: ${colors.accent};
+  background-color: ${colors.dark};
+  font-weight: 500;
+  font-size: 15px;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  ${media.giant`font-size: 13px`}
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: ${colors.dark};
+    background-color: ${colors.accent};
+    border-color: ${colors.accent};
+  }
+  svg {
+    padding-right: 8px;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+`
 export default ContactForm

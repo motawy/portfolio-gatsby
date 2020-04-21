@@ -19,13 +19,13 @@ const Header = () => {
         <NavContainer>
           <NavList>
             {navigation &&
-              navigation.navLinks.map(({ name, url }, key) => {
+              navigation.navLinks.map(({ name, url, offset }, key) => {
                 return (
                   <NavListItem key={key}>
                     <NavLink
                       to={url}
                       spy={true}
-                      offset={-70}
+                      offset={offset}
                       smooth={true}
                       duration={500}
                     >

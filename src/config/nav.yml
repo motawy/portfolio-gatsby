@@ -1,9 +1,13 @@
 navLinks:
   - name: About
     url: "about"
+    offset: -70
   - name: Resume
     url: "resume"
+    offset: -70
   - name: Portfolio
     url: "portfolio"
+    offset: 120
   - name: Contact
     url: "contact"
+    offset: -70

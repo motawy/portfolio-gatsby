@@ -1,25 +1,67 @@
 import React from "react"
-import "./info.styles.scss"
+import { MdEmail, MdLocationOn } from "react-icons/md"
+import styled from "styled-components"
+import colors from "@config/colors.yml"
+import media from "@styles/media"
 
 const Info = ({ info }) => {
   return (
-    <div className="contact-info">
-      <div className="info-title">
+    <InfoContainer>
+      <Title>
         <span>{info.title}</span>
-      </div>
-      <div className="info-subtitle">
+      </Title>
+      <SubTitle>
         <span>{info.subtitle}</span>
-      </div>
-      <div className="block-info">
-        <div className="block-info__item">
-          Location: <span>{info.location}</span>
-        </div>
-        <div className="block-info__item">
-          E-mail: <span>{info.email}</span>
-        </div>
-      </div>
-    </div>
+      </SubTitle>
+      <BlockInfo>
+        <InfoItem>
+          <MdLocationOn /> <span>{info.location}</span>
+        </InfoItem>
+        <InfoItem>
+          <MdEmail /> <span>{info.email}</span>
+        </InfoItem>
+      </BlockInfo>
+    </InfoContainer>
   )
 }
 
+const InfoContainer = styled.div`
+  ${media.desktop`
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  `}
+`
+const Title = styled.div`
+  padding-bottom: 16px;
+  span {
+    color: ${colors.light};
+    font-size: 24px;
+    font-weight: 600;
+  }
+`
+const SubTitle = styled.div`
+  span {
+    color: ${colors.dimText};
+    font-size: 0.9rem;
+    line-height: 24px;
+  }
+`
+const BlockInfo = styled.div`
+  padding-top: 10px;
+`
+const InfoItem = styled.div`
+  margin-top: 16px;
+  color: ${colors.accent};
+  font-size: 24px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  span {
+    margin-left: 16px;
+    font-size: 16px;
+    color: ${colors.light};
+    vertical-align: middle;
+  }
+`
 export default Info

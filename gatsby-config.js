@@ -9,7 +9,6 @@ module.exports = {
       "Mohammed Tantawy, Mido Tawy, Tantawy, motawy, software engineer, full-stack developer, javascript, cloud developer",
   },
   plugins: [
-    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

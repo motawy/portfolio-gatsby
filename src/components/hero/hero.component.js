@@ -1,6 +1,6 @@
 import React from "react"
 import { FaPlus } from "react-icons/fa"
-import jump from "jump.js"
+import { Link } from "react-scroll"
 import styled from "styled-components"
 import colors from "@config/colors.yml"
 import media from "@styles/media"
@@ -18,10 +18,7 @@ const Hero = ({ data }) => {
           <HeroPhrase>{heroPhrase}</HeroPhrase>
         </HeroTitle>
         <HeroButton>
-          <ContactButton
-            aria-label="Go to the contact section"
-            onClick={() => jump("#contact")}
-          >
+          <ContactButton to="contact" spy={true} smooth={true} duration={1000}>
             <FaPlus /> {heroContactButton}
           </ContactButton>
         </HeroButton>
@@ -109,7 +106,7 @@ const HeroButton = styled.div`
   ${media.giant`margin-top: 50px`}
 `
 
-const ContactButton = styled.button`
+const ContactButton = styled(Link)`
   cursor: pointer;
   border: 1px solid ${colors.accent};
   border-radius: 25px;

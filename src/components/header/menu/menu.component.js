@@ -1,6 +1,7 @@
 import React from "react"
 import Social from "../social/social.component"
-import jump from "jump.js"
+import { Link } from "react-scroll"
+import navigation from "@config/nav.yml"
 import styled from "styled-components"
 import colors from "@config/colors.yml"
 import media from "@styles/media"
@@ -11,46 +12,22 @@ const Menu = () => {
       <MenuWrap>
         <MenuNav className="nav">
           <MenuNavList>
-            <li>
-              <MenuButton
-                aria-label="Go to the home section"
-                onClick={() => jump("#home")}
-              >
-                Home
-              </MenuButton>
-            </li>
-            <li>
-              <MenuButton
-                aria-label="Go to the about section"
-                onClick={() => jump("#about")}
-              >
-                About me
-              </MenuButton>
-            </li>
-            <li>
-              <MenuButton
-                aria-label="Go to the resume section"
-                onClick={() => jump("#resume")}
-              >
-                Resume
-              </MenuButton>
-            </li>
-            <li>
-              <MenuButton
-                aria-label="Go to the portfolio section"
-                onClick={() => jump("#portfolio")}
-              >
-                Portfolio
-              </MenuButton>
-            </li>
-            <li>
-              <MenuButton
-                aria-label="Go to the contact section"
-                onClick={() => jump("#contact")}
-              >
-                Contact
-              </MenuButton>
-            </li>
+            {navigation &&
+              navigation.navLinks.map(({ name, url, offset }, key) => {
+                return (
+                  <li key={key}>
+                    <MenuButton
+                      to={url}
+                      spy={true}
+                      offset={offset}
+                      smooth={true}
+                      duration={500}
+                    >
+                      {name}
+                    </MenuButton>
+                  </li>
+                )
+              })}
           </MenuNavList>
         </MenuNav>
         <MenuAnchorList>
@@ -118,7 +95,7 @@ const MenuNavList = styled.ul`
   }
 `
 
-const MenuButton = styled.button`
+const MenuButton = styled(Link)`
   cursor: pointer;
   border: none;
   text-decoration: none;

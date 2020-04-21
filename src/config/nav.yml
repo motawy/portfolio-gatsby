@@ -1,9 +1,9 @@
 navLinks:
   - name: About
-    url: "/#about"
-  - name: Work
-    url: "/#work"
+    url: "about"
+  - name: Resume
+    url: "resume"
   - name: Portfolio
-    url: "/#portfolio"
+    url: "portfolio"
   - name: Contact
-    url: "/#contact"
+    url: "contact"

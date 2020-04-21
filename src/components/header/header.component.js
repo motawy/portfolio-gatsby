@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-scroll"
 import styled from "styled-components"
 import SocialLinks from "./social-links/social-links.components"
 import BurgerMenu from "./menu/burger-menu.component"
@@ -8,7 +9,7 @@ import colors from "@config/colors.yml"
 
 const Header = () => {
   return (
-    <NavPart>
+    <NavPart id="navbar">
       <Wrapper>
         <Logo>
           <a href="/" title="MIDO - Portfolio" id="logoHeader">
@@ -21,7 +22,15 @@ const Header = () => {
               navigation.navLinks.map(({ name, url }, key) => {
                 return (
                   <NavListItem key={key}>
-                    <NavLink href={url}>{name}</NavLink>
+                    <NavLink
+                      to={url}
+                      spy={true}
+                      offset={-70}
+                      smooth={true}
+                      duration={500}
+                    >
+                      {name}
+                    </NavLink>
                   </NavListItem>
                 )
               })}
@@ -34,19 +43,41 @@ const Header = () => {
   )
 }
 
+// Hide top bar - TODO: Refactor this
+
+let prevScrollpos = window.pageYOffset
+window.onscroll = function() {
+  const currentScrollPos = window.pageYOffset
+  if (currentScrollPos > 20) {
+    document.getElementById(
+      "navbar"
+    ).style.boxShadow = `0 10px 30px -10px ${colors.dark}`
+  } else {
+    document.getElementById("navbar").style.boxShadow = "none"
+  }
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0"
+  } else {
+    document.getElementById("navbar").style.top = "-100px"
+  }
+  prevScrollpos = currentScrollPos
+}
+
 // Styles
 
 const NavPart = styled.header`
   z-index: 3;
   position: fixed;
   display: flex;
+  background-color: ${colors.bgDark};
   justify-content: space-between;
   align-items: center;
   top: 0;
   padding: 0px 50px;
   width: 100vw;
   height: 80px;
-  ${media.desktop`padding: 0 40px;`};
+  transition: top 0.3s;
+  box-shadow: 0 10px 30px -10px ${colors.bgDark};
   ${media.tablet`padding: 0 25px;`};
 `
 const Wrapper = styled.nav`
@@ -94,7 +125,9 @@ const NavListItem = styled.li`
   font-size: 18px;
 `
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
+  cursor: pointer;
+  border: none;
   padding: 12px 10px;
   text-decoration: none;
   color: ${colors.light};

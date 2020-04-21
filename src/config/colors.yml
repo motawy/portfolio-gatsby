@@ -1,4 +1,5 @@
-bgDark: "#303841"
+# Original
+bgDark: "#1f252b"
 dark: "#3a4750"
 accent: "#f6c90e"
 darkAccent: "#c6a317"

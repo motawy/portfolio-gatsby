@@ -31,9 +31,9 @@ const Resume = ({ data }) => {
 }
 
 const ResumeSection = styled.section`
-  padding: 0 30px;
-  ${media.desktop`
-    padding: 0 20px;
+  padding: 0 120px;
+  ${media.bigDesktop`
+      padding: 0 100px;
   `}
 `
 
@@ -41,7 +41,6 @@ const ResumeWrapper = styled.div`
   max-width: 1330px;
   width: 100%;
   margin: 0 auto;
-  padding-top: 100px;
 `
 
 const ResumeMain = styled.div`

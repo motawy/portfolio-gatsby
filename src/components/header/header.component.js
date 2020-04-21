@@ -44,23 +44,24 @@ const Header = () => {
 }
 
 // Hide top bar - TODO: Refactor this
-
-let prevScrollpos = window.pageYOffset
-window.onscroll = function() {
-  const currentScrollPos = window.pageYOffset
-  if (currentScrollPos > 20) {
-    document.getElementById(
-      "navbar"
-    ).style.boxShadow = `0 10px 30px -10px ${colors.dark}`
-  } else {
-    document.getElementById("navbar").style.boxShadow = "none"
+if (typeof window !== `undefined`) {
+  let prevScrollpos = window.pageYOffset
+  window.onscroll = function() {
+    const currentScrollPos = window.pageYOffset
+    if (currentScrollPos > 20) {
+      document.getElementById(
+        "navbar"
+      ).style.boxShadow = `0 10px 30px -10px ${colors.dark}`
+    } else {
+      document.getElementById("navbar").style.boxShadow = "none"
+    }
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0"
+    } else {
+      document.getElementById("navbar").style.top = "-100px"
+    }
+    prevScrollpos = currentScrollPos
   }
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0"
-  } else {
-    document.getElementById("navbar").style.top = "-100px"
-  }
-  prevScrollpos = currentScrollPos
 }
 
 // Styles

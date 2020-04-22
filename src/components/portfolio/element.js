@@ -68,9 +68,8 @@ const ImageContent = styled(Img)`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.4;
+  opacity: 1;
   transition: 0.5s;
-  ${({ hover }) => hover && `opacity: 1;`}
 `
 
 const Content = styled.div`

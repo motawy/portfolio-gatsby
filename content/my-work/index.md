@@ -17,7 +17,7 @@ myWork:
       - SpriteKit
       - Game Center
   - title: "GET ME THERE"
-    link: "https://github.com/motawy/smart-brain"
+    link: "https://github.com/motawy/get-me-there"
     image: "./img/gmt.png"
     shortDescription: "A mobile app that gives public transport info and directions."
     techUsed:

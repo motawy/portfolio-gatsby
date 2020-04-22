@@ -1,5 +1,5 @@
 import React from "react"
-import { FaGithubAlt, FaTwitter, FaLinkedin, FaMediumM } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaMediumM, FaCodepen } from "react-icons/fa"
 import styled from "styled-components"
 import Colors from "@config/colors.yml"
 
@@ -13,17 +13,7 @@ const Social = ({ size }) => {
           title="GitHub"
           href="https://github.com/motawy"
         >
-          <FaGithubAlt size={size} />
-        </a>
-      </SocialItem>
-      <SocialItem>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Twitter"
-          href="https://twitter.com/mohammed_tawy"
-        >
-          <FaTwitter size={size} />
+          <FaGithub size={size} />
         </a>
       </SocialItem>
       <SocialItem>
@@ -46,6 +36,15 @@ const Social = ({ size }) => {
           <FaMediumM size={size} />
         </a>
       </SocialItem>
+      <SocialItem>
+        <a
+          href="https://codepen.io/m3trajetta"
+          rel="noopener noreferrer"
+          title="CodePen"
+        >
+          <FaCodepen size={size} />
+        </a>
+      </SocialItem>
     </>
   )
 }
@@ -58,7 +57,7 @@ const SocialItem = styled.li`
   text-align: center;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   a {
     text-decoration: none;
     color: ${Colors.light};

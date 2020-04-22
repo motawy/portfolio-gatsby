@@ -1,48 +1,25 @@
-import React from "react"
+import React, { useState } from "react"
 import Menu from "./menu.component"
 import styled from "styled-components"
 import colors from "@config/colors.yml"
 import media from "@styles/media"
 
 const BurgerMenu = () => {
-  const handleClick = () => {
-    const menu = document.querySelector(".menu")
-    const closeBtn = document.querySelector(".close_btn")
-    const buttons = document.querySelectorAll(".nav button")
-    if (menu.style.visibility === "") menu.style.visibility = "hidden"
-
-    if (menu.style.visibility === "hidden") {
-      menu.style.visibility = "visible"
-      menu.style.opacity = 1
-    }
-
-    closeBtn.addEventListener("click", () => {
-      menu.style.visibility = "hidden"
-      menu.style.opacity = 0
-    })
-
-    for (const button of buttons) {
-      button.addEventListener("click", () => {
-        menu.style.visibility = "hidden"
-        menu.style.opacity = 0
-      })
-    }
-  }
-
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const toggleMenu = () => setMenuIsOpen(!menuIsOpen)
   return (
     <>
       <BurgerContainer
-        className="burger-menu"
         role="button"
         aria-label="Toggle menu"
         id="burger-menu"
-        onClick={handleClick}
-        onKeyDown={handleClick}
+        onClick={() => toggleMenu()}
+        onKeyDown={() => toggleMenu()}
         tabIndex="0"
       >
-        <BurgerBox></BurgerBox>
+        <BurgerBox />
       </BurgerContainer>
-      <Menu />
+      <Menu isMenuOpen={menuIsOpen} toggleMenu={toggleMenu} />
     </>
   )
 }
@@ -55,6 +32,10 @@ const BurgerContainer = styled.div`
   height: 40px;
   cursor: pointer;
   display: none;
+  transition: 0.3s;
+  &:focus {
+    outline: 0;
+  }
   ${media.tablet`display: flex;
   display: -webkit-box;
   display: -ms-flexbox;

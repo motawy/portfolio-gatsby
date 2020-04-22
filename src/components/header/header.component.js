@@ -156,6 +156,7 @@ const NavLink = styled(Link)`
     -webkit-transform: scale(1.2, 1.2);
     -ms-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2);
+    transform: translateY(-4%);
   }
 `
 

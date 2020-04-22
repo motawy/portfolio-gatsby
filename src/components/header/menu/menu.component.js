@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Social from "../social/social.component"
 import { Link } from "react-scroll"
 import navigation from "@config/nav.yml"
@@ -6,11 +6,11 @@ import styled from "styled-components"
 import colors from "@config/colors.yml"
 import media from "@styles/media"
 
-const Menu = () => {
+const Menu = ({ isMenuOpen, toggleMenu }) => {
   return (
-    <MenuContainer className="menu">
+    <MenuContainer showMenu={isMenuOpen}>
       <MenuWrap>
-        <MenuNav className="nav">
+        <MenuNav>
           <MenuNavList>
             {navigation &&
               navigation.navLinks.map(({ name, url, offset }, key) => {
@@ -34,8 +34,15 @@ const Menu = () => {
           <Social size="32" />
         </MenuAnchorList>
       </MenuWrap>
-      <CloseButton className="close_btn">
-        <span></span>
+      <CloseButton
+        onClick={() => {
+          toggleMenu()
+        }}
+        onKeyDown={() => {
+          toggleMenu()
+        }}
+      >
+        <span />
       </CloseButton>
     </MenuContainer>
   )
@@ -66,8 +73,19 @@ const MenuContainer = styled.div`
   transition: all 0.3s;
   background-color: ${colors.dark};
   z-index: 1;
-  display: none;
   transition: 0.5s;
+  ${({ showMenu }) =>
+    showMenu &&
+    `
+    visibility: visible;
+    opacity: 1;
+  `}
+  ${({ closeMenu }) =>
+    closeMenu &&
+    `
+    visibility: hidden;
+    opacity: 0;
+  `}
   ${media.tablet`display: flex;`};
 `
 const MenuWrap = styled.div`

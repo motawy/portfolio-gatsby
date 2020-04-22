@@ -50,7 +50,7 @@ const About = ({ data }) => {
 const AboutSection = styled.section`
   padding: 0 120px 100px;
   ${media.bigDesktop`
-      padding: 0 100px;
+      padding: 0 40px;
   `}
 `
 

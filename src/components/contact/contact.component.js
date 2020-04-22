@@ -34,9 +34,9 @@ const Contact = ({ data }) => {
 // Styles
 
 const ContactSection = styled.section`
-  padding: 0 120px 100px;
+  padding: 100px 120px 100px;
   ${media.bigDesktop`
-    padding: 0 100px;
+      padding: 100px 40px;
   `}
 `
 const ContactContainer = styled.div`

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import colors from "@config/colors.yml"
+import media from "@styles/media"
 import { FaGithub } from "react-icons/fa"
 
 const Element = ({ link, image, title, description, tech }) => {
@@ -38,6 +39,9 @@ const Box = styled.div`
   height: 100%;
   background: ${colors.dark};
   transition: 0.5s;
+  ${media.bigPhone`
+    margin-top: 24px;
+  `}
 
   ${({ hover }) =>
     hover &&
@@ -75,6 +79,7 @@ const Content = styled.div`
   left: 0;
   right: 0;
   height: 100%;
+  width: 100%;
   background: rgba(0, 0, 0, 0.75);
   color: ${colors.light};
   display: flex;
@@ -88,16 +93,23 @@ const Content = styled.div`
   ${({ hover }) => hover && `visibility: visible; opacity: 1;`}
   h2 {
     color: ${colors.accent};
+    ${media.bigPhone`font-size:16px`}
   }
   h4 {
     font-weight: 300;
+    text-align: center;
     margin-bottom: 16px;
+    ${media.bigPhone`
+      font-size:12px;
+      margin-bottom:4px
+    `}
   }
   a {
     position: absolute;
     bottom: 0;
     right: 0;
     margin: 16px;
+    ${media.bigPhone`margin:4px`}
   }
 `
 
@@ -110,6 +122,10 @@ const TechUser = styled.div`
     color: ${colors.bgDark};
     padding: 5px 10px;
     border-radius: 20px;
+    ${media.bigPhone`
+      font-size:10px;
+      margin-bottom:4px
+    `}
   }
 `
 

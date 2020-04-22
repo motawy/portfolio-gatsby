@@ -53,11 +53,12 @@ const MenuContainer = styled.div`
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 101vh;
   position: absolute;
-  top: -20px;
-  left: 30px;
+  top: 0;
+  left: 0;
+  position: fixed;
   padding: 0;
   margin: 0;
   -webkit-transition: all 0.3s;
@@ -66,6 +67,7 @@ const MenuContainer = styled.div`
   background-color: ${colors.dark};
   z-index: 1;
   display: none;
+  transition: 0.5s;
   ${media.tablet`display: flex;`};
 `
 const MenuWrap = styled.div`
@@ -150,8 +152,8 @@ const MenuAnchorList = styled.ul`
 const CloseButton = styled.div`
   width: 40px;
   height: 40px;
-  top: 20px;
-  right: 30px;
+  top: 15px;
+  right: 25px;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -89,7 +89,7 @@ const Form = styled.div`
       background: none;
       border: none;
       outline: none;
-      width: 500px;
+      width: 100%;
       padding-bottom: 15px;
       border-bottom: 1px solid ${colors.accent};
       margin-bottom: 30px;
@@ -105,7 +105,7 @@ const Form = styled.div`
       background: none;
       border: none;
       outline: none;
-      width: 500px;
+      width: 100%;
       max-width: 500px;
       min-height: 100px;
       border-bottom: 1px solid ${colors.accent};

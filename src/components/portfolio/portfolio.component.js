@@ -41,24 +41,28 @@ const Portfolio = ({ data }) => {
 }
 
 const PortfolioSection = styled.section`
-  padding: 100px 120px;
+  padding: 0 120px 100px;
   ${media.bigDesktop`
-    padding: 0 100px;
-`}
+      padding: 0 40px;
+  `}
 `
 
 const PortfolioWrapper = styled.div`
   max-width: 1330px;
   width: 100%;
   margin: 0 auto;
-  padding: 100px 20px 80px;
+  margin-top: 100px;
 `
 
 const PortfolioContainer = styled.div`
   padding-top: 48px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2em;
+  ${media.bigPhone`
+    display: flex;
+    flex-direction: column;
+  `}
 `
 
 export default Portfolio

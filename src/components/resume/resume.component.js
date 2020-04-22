@@ -33,7 +33,7 @@ const Resume = ({ data }) => {
 const ResumeSection = styled.section`
   padding: 0 120px;
   ${media.bigDesktop`
-      padding: 0 100px;
+      padding: 0 40px;
   `}
 `
 

@@ -57,7 +57,7 @@ const PortfolioWrapper = styled.div`
 const PortfolioContainer = styled.div`
   padding-top: 48px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
   gap: 2em;
   ${media.bigPhone`
     display: flex;

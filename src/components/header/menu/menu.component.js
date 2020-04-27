@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Social from "../social/social.component"
 import { Link } from "react-scroll"
 import navigation from "@config/nav.yml"
@@ -22,6 +22,12 @@ const Menu = ({ isMenuOpen, toggleMenu }) => {
                       offset={offset}
                       smooth={true}
                       duration={500}
+                      onClick={() => {
+                        toggleMenu()
+                      }}
+                      onKeyDown={() => {
+                        toggleMenu()
+                      }}
                     >
                       {name}
                     </MenuButton>

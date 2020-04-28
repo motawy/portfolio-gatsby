@@ -5,12 +5,12 @@ import GlobalStyles from "@styles/GlobalStyles"
 
 const Layout = ({ children }) => {
   return (
-    <div className="main-class">
+    <>
       <GlobalStyles />
       <SEO />
       <Header />
       {children}
-    </div>
+    </>
   )
 }
 

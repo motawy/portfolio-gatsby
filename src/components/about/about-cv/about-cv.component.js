@@ -43,6 +43,7 @@ const AboutCVButton = styled.a`
     color: ${colors.dark};
     background-color: ${colors.accent};
     border-color: ${colors.accent};
+    transform: translateY(-4%);
   }
 
   svg {

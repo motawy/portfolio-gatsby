@@ -55,9 +55,9 @@ const SocialItem = styled.li`
   margin-bottom: 24px;
   font-size: 16px;
   text-align: center;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   a {
     text-decoration: none;
     color: ${Colors.light};
@@ -68,9 +68,9 @@ const SocialItem = styled.li`
   }
 
   &:hover {
-    -webkit-transform: scale(1.7, 1.7);
-    -ms-transform: scale(1.7, 1.7);
-    transform: scale(1.7, 1.7);
+    -webkit-transform: scale(1.4, 1.4);
+    -ms-transform: scale(1.4, 1.4);
+    transform: scale(1.4, 1.4);
   }
 `
 

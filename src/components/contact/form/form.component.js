@@ -154,6 +154,7 @@ const SubmitButton = styled.button`
     color: ${colors.dark};
     background-color: ${colors.accent};
     border-color: ${colors.accent};
+    transform: translateY(-4%);
   }
   svg {
     padding-right: 8px;

@@ -29,6 +29,7 @@ const AboutMediaContainer = styled.div`
     color: ${colors.dimText};
     font-size: 0.9rem;
     font-weight: 400;
+    text-decoration: none;
   }
 `
 

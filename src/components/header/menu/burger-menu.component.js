@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Menu from "./menu.component"
 import styled from "styled-components"
-import colors from "@config/colors.yml"
+import colors from "@config/colors/index.yml"
 import media from "@styles/media"
 
 const BurgerMenu = () => {

@@ -2,7 +2,7 @@ import React from "react"
 import Social from "../social/social.component"
 import styled from "styled-components"
 import media from "@styles/media"
-import colors from "@config/colors.yml"
+import colors from "@config/colors/index.yml"
 
 const SocialLinks = () => {
   return (

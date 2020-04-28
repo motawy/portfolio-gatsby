@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import colors from "@config/colors.yml"
+import colors from "@config/colors/index.yml"
 import media from "@styles/media"
 import { FaGithub } from "react-icons/fa"
 

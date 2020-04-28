@@ -2,7 +2,7 @@ import React from "react"
 import { FaPlus } from "react-icons/fa"
 import { Link } from "react-scroll"
 import styled from "styled-components"
-import colors from "@config/colors.yml"
+import colors from "@config/colors/index.yml"
 import media from "@styles/media"
 
 const Hero = ({ data }) => {

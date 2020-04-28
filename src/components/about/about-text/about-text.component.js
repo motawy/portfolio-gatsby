@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import colors from "@config/colors.yml"
+import colors from "@config/colors/index.yml"
 
 const AboutText = ({ text }) => {
   return (

@@ -1,7 +1,7 @@
 import React from "react"
 import TimelineItem from "../timeline-item/timeline-item.component"
 import styled from "styled-components"
-import colors from "@config/colors.yml"
+import colors from "@config/colors/index.yml"
 
 const Education = ({ education }) => {
   return (

@@ -1,9 +1,9 @@
 import React from "react"
 import Social from "../social/social.component"
 import { Link } from "react-scroll"
-import navigation from "@config/nav.yml"
+import navigation from "@config/nav/index.yml"
 import styled from "styled-components"
-import colors from "@config/colors.yml"
+import colors from "@config/colors/index.yml"
 import media from "@styles/media"
 
 const Menu = ({ isMenuOpen, toggleMenu }) => {

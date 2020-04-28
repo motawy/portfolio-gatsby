@@ -1,7 +1,7 @@
 import React from "react"
 import { FaGithub, FaLinkedin, FaMediumM, FaCodepen } from "react-icons/fa"
 import styled from "styled-components"
-import Colors from "@config/colors.yml"
+import Colors from "@config/colors/index.yml"
 
 const Social = ({ size }) => {
   return (

@@ -1,7 +1,7 @@
 import React from "react"
 import Resume from "../../../files/resume.pdf"
 import styled from "styled-components"
-import colors from "@config/colors.yml"
+import colors from "@config/colors/index.yml"
 import media from "@styles/media"
 
 const AboutCV = () => {

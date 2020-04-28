@@ -4,8 +4,8 @@ import styled from "styled-components"
 import SocialLinks from "./social-links/social-links.components"
 import BurgerMenu from "./menu/burger-menu.component"
 import media from "@styles/media"
-import navigation from "@config/nav.yml"
-import colors from "@config/colors.yml"
+import navigation from "@config/nav/index.yml"
+import colors from "@config/colors/index.yml"
 
 const Header = () => {
   return (

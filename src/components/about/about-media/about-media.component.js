@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import media from "@styles/media"
-import colors from "@config/colors.yml"
+import colors from "@config/colors/index.yml"
 
 const AboutMedia = ({ title, value }) => {
   return (

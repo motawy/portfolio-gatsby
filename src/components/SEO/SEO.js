@@ -57,6 +57,7 @@ const query = graphql`
         author
         url
         keywords
+        image
       }
     }
   }

@@ -7,6 +7,7 @@ module.exports = {
     url: "https://motawy.me",
     keywords:
       "Mohammed Tantawy, Mido Tawy, Tantawy, motawy, software engineer, full-stack developer, javascript, cloud developer",
+    image: "/images/siteImage.png",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

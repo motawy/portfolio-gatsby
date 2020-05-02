@@ -50,7 +50,7 @@ const About = ({ data }) => {
 const AboutSection = styled.section`
   padding: 0 120px 100px;
   ${media.bigDesktop`
-      padding: 0 40px;
+      padding: 0 100px;
   `}
 `
 
@@ -78,27 +78,33 @@ const AboutContainer = styled.div`
 `
 
 const AboutPictureContainer = styled.div`
-  min-width: 400px;
-  width: 400px;
-  height: 500px;
+  min-width: 300px;
+  width: 40%;
   position: relative;
   ${media.bigPhone`
-      width: 100%;
-      max-width: 400px;
-      min-width: 100vw;
-      &:before {
+      width: 70%;
+      &:before, &:after {
         display: none;
       }
   `}
 
-  &:before {
+  &:before, &:after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: ${colors.accent};
+    border-radius: 5px;
+  }
+
+  &:before {
+    background-color: ${colors.bgDark};
     right: -20px;
     bottom: -20px;
+  }
+  &:after {
+    border: 2px solid ${colors.accent};
+    top: 20px;
+    left: 20px;
     z-index: 1;
   }
 `

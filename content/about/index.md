@@ -12,7 +12,7 @@ aboutText:
   - "I enjoy developing new products and improving the quality of existing ones,
   working in teams to iterate and improve the experiences that reach
   business goals."
-aboutImage: "./img/pic.png"
+aboutImage: "./img/pic.jpg"
 
 aboutInfo:
   aboutAge: 31

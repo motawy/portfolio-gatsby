@@ -100,7 +100,7 @@ const Portfolio = ({ data }) => {
 const PortfolioSection = styled.section`
   padding: 0 120px 100px;
   ${media.bigDesktop`
-      padding: 0 40px;
+      padding: 0 100px;
   `}
 `
 
@@ -114,7 +114,7 @@ const PortfolioWrapper = styled.div`
 const PortfolioContainer = styled.div`
   padding-top: 48px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   gap: 2em;
   ${media.bigPhone`
     display: flex;

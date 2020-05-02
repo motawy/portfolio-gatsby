@@ -13,7 +13,7 @@ const Projects = ({ data }) => {
 
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
   return (
-    <ProjectsSection ref={revealContainer}>
+    <ProjectsSection ref={revealContainer} id="projects">
       <ProjectsWrapper>
         <TitleSection
           firstPart="More"

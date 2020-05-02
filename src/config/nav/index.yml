@@ -8,6 +8,9 @@ navLinks:
   - name: Portfolio
     url: "portfolio"
     offset: 120
+  - name: Projects
+    url: "projects"
+    offset: -70
   - name: Contact
     url: "contact"
     offset: -70

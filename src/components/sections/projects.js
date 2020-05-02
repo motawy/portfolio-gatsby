@@ -157,7 +157,7 @@ const ProjectIconLinks = styled.a`
   position: relative;
   top: 0;
   padding: 10px;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
   svg {
     width: 24px;
     height: 24px;
@@ -170,12 +170,12 @@ const ProjectIconLinks = styled.a`
 
 const ProjectName = styled.h3`
   margin: 0 0 10px;
-  font-size: 24px;
+  font-size: 18px;
   color: ${colors.light};
 `
 
 const ProjectDescription = styled.div`
-  font-size: 16px;
+  font-size: 14px;
   color: ${colors.dimText};
   a {
     display: inline-block;
@@ -222,7 +222,7 @@ const ProjectTechUsed = styled.ul`
   list-style: none;
 
   li {
-    font-size: 12px;
+    font-size: 11px;
     color: ${colors.dimText};
     opacity: 0.7;
     line-height: 1.75;

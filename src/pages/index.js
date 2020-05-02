@@ -4,7 +4,7 @@ import About from "../components/about/about.component"
 import Hero from "../components/hero/hero.component"
 import Resume from "../components/resume/resume.component"
 import Projects from "../components/sections/projects"
-import Portfolio from "../components/portfolio/portfolio.component"
+import Portfolio from "../components/sections/portfolio"
 import Contact from "../components/contact/contact.component"
 import Footer from "../components/footer/footer.component"
 import { graphql } from "gatsby"
@@ -84,23 +84,23 @@ export const pageQuery = graphql`
     }
     portfolio: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/my-work/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {
         frontmatter {
-          myWork {
-            title
-            techUsed
-            shortDescription
-            link
-            image {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+          title
+          techUsed
+          github
+          external
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
           }
         }
+        html
       }
     }
     projects: allMarkdownRemark(

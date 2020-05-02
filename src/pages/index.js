@@ -3,7 +3,7 @@ import Layout from "../components/layout/layout.component"
 import About from "../components/about/about.component"
 import Hero from "../components/hero/hero.component"
 import Resume from "../components/resume/resume.component"
-// import Work from "../components/sections/work"
+import Projects from "../components/sections/projects"
 import Portfolio from "../components/portfolio/portfolio.component"
 import Contact from "../components/contact/contact.component"
 import Footer from "../components/footer/footer.component"
@@ -15,8 +15,8 @@ const IndexPage = ({ data }) => (
     <Hero data={data.hero} />
     <About data={data.about} />
     <Resume data={data.resume} />
-    {/* <Work data={data.resume} /> */}
     <Portfolio data={data.portfolio} />
+    <Projects data={data.projects} />
     <Contact data={data.contact} />
     <Footer />
   </Layout>
@@ -101,6 +101,20 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    projects: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/my-projects/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          techUsed
+          github
+          hosted
+        }
+        html
       }
     }
     contact: allMarkdownRemark(

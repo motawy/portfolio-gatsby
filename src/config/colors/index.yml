@@ -1,5 +1,7 @@
 # Original
 bgDark: "#1f252b"
+bgTint: "#29333a"
+shadow: "#000"
 dark: "#3a4750"
 accent: "#f6c90e"
 darkAccent: "#c6a317"

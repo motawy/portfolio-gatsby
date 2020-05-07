@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "MIDO. | Portfolio",
     description:
-      "Mohammed Tantawy, also known as Mido Tawy, is a Software Engineer based in Australia, who specializes in developing high quality applications.",
+      "Mohammed Tantawy, also known as Mido Tawy, is a Full-Stack Developer based in Australia, who specializes in developing high quality applications.",
     author: "Mohammed Tantawy",
     url: "https://motawy.me",
     keywords:

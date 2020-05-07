@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react"
-import AboutPersonal from "./about-personal/about-personal.component"
-import AboutCV from "./about-cv/about-cv.component"
-import AboutText from "./about-text/about-text.component"
 import TitleSection from "../title-section/title-section.component"
+import Resume from "../../files/resume.pdf"
+import { FiDownloadCloud } from "react-icons/fi"
 import styled from "styled-components"
 import media from "@styles/media"
 import colors from "@config/colors/index.yml"
@@ -11,8 +10,8 @@ import sr from "@utils/sr"
 import srConfig from "@utils/srConfig"
 
 const About = ({ data }) => {
-  const { frontmatter } = data.nodes[0]
-  const { aboutTitle, aboutText, aboutInfo, aboutImage } = frontmatter
+  const { frontmatter, html } = data.nodes[0]
+  const { aboutTitle, aboutSkills, aboutImage } = frontmatter
   const revealContainer = useRef(null)
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
 
@@ -22,7 +21,7 @@ const About = ({ data }) => {
         <TitleSection
           firstPart="About"
           secondPart="me"
-          description="Software Engineer, based in Australia"
+          description="Full-Stack Developer, based in Australia"
         />
         <AboutContainer>
           <AboutPictureContainer>
@@ -35,9 +34,23 @@ const About = ({ data }) => {
             <AboutTitle>
               <h3>{aboutTitle}</h3>
             </AboutTitle>
-            <AboutText text={aboutText} />
-            <AboutPersonal personalInfo={aboutInfo} />
-            <AboutCV />
+            <AboutTextContent dangerouslySetInnerHTML={{ __html: html }} />
+            <AboutSkillsContainer>
+              {aboutSkills &&
+                aboutSkills.map((skill, i) => (
+                  <AboutSkill key={i}>{skill}</AboutSkill>
+                ))}
+            </AboutSkillsContainer>
+            <AboutResume>
+              <AboutResumeButton
+                href={Resume}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiDownloadCloud />
+                Resume
+              </AboutResumeButton>
+            </AboutResume>
           </AboutInfo>
         </AboutContainer>
       </AboutWrapper>
@@ -78,11 +91,9 @@ const AboutContainer = styled.div`
 `
 
 const AboutPictureContainer = styled.div`
-  min-width: 300px;
-  width: 40%;
+  min-width: 260px;
   position: relative;
   ${media.bigPhone`
-      width: 70%;
       &:before, &:after {
         display: none;
       }
@@ -132,6 +143,74 @@ const AboutTitle = styled.div`
     color: ${colors.accent};
     font-size: 24px;
     font-weight: 600;
+  }
+`
+const AboutTextContent = styled.div`
+  padding-top: 20px;
+  width: 100%;
+  p {
+    color: ${colors.light};
+    line-height: 26px;
+    font-size: 0.9rem;
+    margin-top: 16px;
+  }
+`
+const AboutSkillsContainer = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  overflow: hidden;
+  padding: 0;
+  margin: 20px 0 0 0;
+  list-style: none;
+`
+const AboutSkill = styled.li`
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: ${colors.dimText};
+  &:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: ${colors.accent};
+    line-height: 12px;
+  }
+`
+const AboutResume = styled.div`
+  margin-top: 28px;
+`
+const AboutResumeButton = styled.a`
+  cursor: pointer;
+  border: 1px solid ${colors.accent};
+  border-radius: 25px;
+  padding: 15px 25px;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: ${colors.accent};
+  background-color: ${colors.dark};
+  font-weight: 500;
+  font-size: 15px;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  ${media.giant`font-size: 13px`}
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: ${colors.dark};
+    background-color: ${colors.accent};
+    border-color: ${colors.accent};
+    transform: translateY(-4%);
+  }
+
+  svg {
+    margin-right: 8px;
+    font-size: 16px;
   }
 `
 export default About

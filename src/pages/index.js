@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout/layout.component"
-import About from "../components/about/about.component"
+import About from "../components/sections/about"
 import Hero from "../components/hero/hero.component"
 import Resume from "../components/resume/resume.component"
 import Projects from "../components/sections/projects"
@@ -46,14 +46,7 @@ export const pageQuery = graphql`
       nodes {
         frontmatter {
           aboutTitle
-          aboutText
-          aboutInfo {
-            aboutAge
-            aboutEmail
-            aboutLocation
-            aboutPhone
-            aboutStatus
-          }
+          aboutSkills
           aboutImage {
             childImageSharp {
               fluid {
@@ -62,6 +55,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        html
       }
     }
     resume: allMarkdownRemark(

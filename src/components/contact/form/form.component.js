@@ -58,6 +58,7 @@ const ContactForm = ({ form }) => {
 // Styles
 
 const FormContainer = styled.div`
+  flex: 1;
   ${media.desktop`
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
@@ -102,11 +103,11 @@ const Form = styled.div`
       }
     }
     textarea {
+      color: ${colors.light};
       background: none;
       border: none;
       outline: none;
       width: 100%;
-      max-width: 500px;
       min-height: 100px;
       border-bottom: 1px solid ${colors.accent};
       margin-bottom: 30px;

@@ -114,24 +114,24 @@ const PortfolioWrapper = styled.div`
 const PortfolioContainer = styled.div`
   padding-top: 48px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
   gap: 2em;
-  ${media.bigPhone`
+  ${media.tablet`
     display: flex;
     flex-direction: column;
   `}
 `
 
 const ProjectContent = styled.div`
+  padding: 40px 120;
   position: relative;
   grid-column: 1 / 7;
   grid-row: 1 / -1;
   ${media.smallTablet`
-  grid-column: 1 / -1;
-  padding: 40px 40px 30px;
-  z-index: 5;
-`};
-  ${media.bigPhone`padding: 30px 25px 20px;`};
+    grid-column: 1 / -1;
+    padding: 40px;
+    z-index: 5;
+  `};
 `
 
 const ProjectName = styled.h5`

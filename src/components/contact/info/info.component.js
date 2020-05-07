@@ -26,6 +26,7 @@ const Info = ({ info }) => {
 }
 
 const InfoContainer = styled.div`
+  flex: 1;
   ${media.desktop`
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;

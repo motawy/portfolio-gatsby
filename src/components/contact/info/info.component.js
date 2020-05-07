@@ -1,5 +1,5 @@
 import React from "react"
-import { MdEmail, MdLocationOn } from "react-icons/md"
+import { FiMapPin, FiEdit3 } from "react-icons/fi"
 import styled from "styled-components"
 import colors from "@config/colors/index.yml"
 import media from "@styles/media"
@@ -15,10 +15,8 @@ const Info = ({ info }) => {
       </SubTitle>
       <BlockInfo>
         <InfoItem>
-          <MdLocationOn /> <span>{info.location}</span>
-        </InfoItem>
-        <InfoItem>
-          <MdEmail /> <span>{info.email}</span>
+          <FiMapPin /> <span>{info.location}</span>
+          <FiEdit3 /> <span>{info.email}</span>
         </InfoItem>
       </BlockInfo>
     </InfoContainer>
@@ -60,7 +58,8 @@ const InfoItem = styled.div`
   align-items: center;
   span {
     margin-left: 16px;
-    font-size: 16px;
+    margin-right: 48px;
+    font-size: 14px;
     color: ${colors.light};
     vertical-align: middle;
   }

@@ -56,12 +56,20 @@ const InfoItem = styled.div`
   font-weight: 400;
   display: flex;
   align-items: center;
+  svg {
+    ${media.tablet`font-size:18px;`}
+  }
   span {
     margin-left: 16px;
     margin-right: 48px;
     font-size: 14px;
     color: ${colors.light};
     vertical-align: middle;
+    ${media.tablet`
+    font-size:12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    `}
   }
 `
 export default Info

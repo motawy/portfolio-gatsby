@@ -11,6 +11,7 @@ body {
   letter-spacing: 0.8px;
   height: 100vh;
   width: 100vw;
+  overflow-x:hidden;
   background-color: ${colors.bgDark};
 }
 

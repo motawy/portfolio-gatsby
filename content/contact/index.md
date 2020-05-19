@@ -7,6 +7,6 @@ info:
     title: "Let’s Get in touch!"    
     subtitle: "I am always open to talk about projects or possible collaborations.
   Leave me a message here or contact me through the other channels."
-    location: "Melbourne, AU"
+    location: "Mel, AU"
     email: "hello@motawy.me"
 ---

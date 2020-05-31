@@ -87,7 +87,6 @@ const ProjectsSection = styled.section`
 const ProjectsWrapper = styled.div`
   max-width: 1330px;
   width: 100%;
-  margin: 0 auto;
   margin-top: 100px;
 `
 

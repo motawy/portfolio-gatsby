@@ -65,7 +65,7 @@ const HeroTitle = styled.div`
     margin-top: -16px;
     margin-bottom: -32px;
     font-weight: 300;
-    font-family: "SignPainter", cursive, sans-serif;
+    font-family: "SignPainter", sans-serif;
     white-space: nowrap;
     ${media.bigDesktop`font-size: 140px`}
     ${media.desktop`

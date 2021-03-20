@@ -1,13 +1,18 @@
 ---
-aboutTitle: "Who am I?"
-aboutImage: "./img/pic.jpg"
+aboutTitle: 'Who am I?'
+aboutImage: './img/pic.jpg'
 aboutSkills:
-  - JavaScript (ES6+)
-  - HTML & (S)CSS
-  - React
-  - Node.js
-  - Dart (Flutter)
-  - AWS
+    - JavaScript
+    - Typescript
+    - React
+    - Node.js
+    - Docker
+    - AWS
+aboutSkillsImages:
+    - './img/'
+    - './img/'
+    - './img/'
+    - './img/'
 ---
 
 Four years ago, I decided to pursue my passion for IT and decided to
@@ -17,8 +22,11 @@ they help me improve so much.
 
 I am glad that I took that decision, and I
 want to keep pushing forward to gain more experience and achieve my
-goals. My area of focus lies in developing web and mobile products as
-well as cloud technologies (AWS).
+goals. My area of focus lies in back-end development using cloud technologies
+and DevOps mentality(AWS).
+
+That doesn't mean that I'm not able to use front-end technologies. This website
+was created using Gatsby, GraphQL and styled-components.
 
 I enjoy developing new products and improving the quality of existing ones,
 working in teams to iterate and improve the experiences that reach

@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+    <img alt="Gatsby" src="https://raw.githubusercontent.com/motawy/portfolio-gatsby/master/static/images/gatsby.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -10,7 +10,7 @@
 </h1>
 
 After many iterations I finally got something I am quite happy with.
-Please note that it's a constant work in progress subject to changes. 
+Please note that it's a constant work in progress subject to changes.
 
 ![demo](https://raw.githubusercontent.com/motawy/portfolio-gatsby/master/static/images/siteImage.png)
 

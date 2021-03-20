@@ -1,7 +1,14 @@
-import { createGlobalStyle } from "styled-components"
-import colors from "@config/colors/index.yml"
+import { createGlobalStyle } from 'styled-components';
+import colors from '@config/colors/index.yml';
+import heroFont from '../fonts/SignPainter.ttf';
 
 const GlobalStyles = createGlobalStyle`
+@font-face {
+  font-family: 'heroFont';
+  src: local('hero Font'), local('heroFont'),
+       url(${heroFont});
+}
+
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -289,7 +296,7 @@ a.btn {
 
 a.btn:hover {
   background-color: ${colors.dark};
-  color: ${colors.light}!important; 
+  color: ${colors.light}!important;
   border-color: transparent;
 }
 
@@ -312,6 +319,6 @@ a.btn.white {
 a.btn.white:hover {
   border-color: transparent;
 }
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;

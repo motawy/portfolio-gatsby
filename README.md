@@ -16,7 +16,7 @@ Please note that it's a constant work in progress subject to changes.
 
 ## 🚨 Forking or this repo (please read!)
 
-YES, you can fork or clone this repo. Please give me proper credit by linking back to [motawy.me](https://motawy.me). Thanks!
+YES, of course. But please give me proper credit by linking back to [mido-dev.com](https://mido-dev.com). Thanks!
 
 ## Credit
 

@@ -2,11 +2,11 @@ module.exports = {
     siteMetadata: {
         title: 'MIDO. | Portfolio',
         description:
-            'Mohammed Tantawy, also known as Mido Tawy, is a Full-Stack Developer based in Australia, who specializes in developing high quality applications.',
+            'Mohammed Tantawy, also known as Mido, is a Full-Stack Developer based in Australia, who specializes in developing high quality applications.',
         author: 'Mohammed Tantawy',
         url: 'https://motawy.me',
         keywords:
-            'Mohammed Tantawy, Mido Tawy, Tantawy, motawy, software engineer, full-stack developer, javascript, cloud developer',
+            'Mohammed Tantawy, Mido, Tantawy, motawy, software engineer, full-stack developer, javascript, cloud developer',
         image: '/images/siteImage.png',
     },
     plugins: [
@@ -19,7 +19,7 @@ module.exports = {
             resolve: `gatsby-plugin-manifest`,
             options: {
                 name: 'Mohammed Tantawy',
-                short_name: 'Mido Tawy',
+                short_name: 'Mido',
                 start_url: '/',
                 background_color: `#663399`,
                 theme_color: `#663399`,

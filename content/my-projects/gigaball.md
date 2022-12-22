@@ -2,8 +2,7 @@
 date: "2019-05-29"
 title: "Giga Ball"
 github: "https://github.com/motawy/giga-ball"
-external: ""
-image: "./img/giga.png"
+hosted: ""
 techUsed:
   - Objective-C
   - SpriteKit

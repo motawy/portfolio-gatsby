@@ -27,7 +27,7 @@ const Projects = ({ data }) => {
             return (
               <ProjectCard key={key}>
                 <ProjectCardInner>
-                  <header>
+                  <ProjectHeaderContainer>
                     <ProjectHeader>
                       <ProjectMainIcon>
                         <FiFolder color={colors.accent} />
@@ -59,7 +59,7 @@ const Projects = ({ data }) => {
                     <ProjectDescription
                       dangerouslySetInnerHTML={{ __html: html }}
                     />
-                  </header>
+                  </ProjectHeaderContainer>
                   <footer>
                     <ProjectTechUsed>
                       {techUsed.map((tech, key) => (
@@ -138,6 +138,11 @@ const ProjectCard = styled.div`
       transform: scale(1.1);
     }
   }
+`
+
+const ProjectHeaderContainer = styled.div`
+  display: block;
+  width: 100%
 `
 
 const ProjectHeader = styled.div`

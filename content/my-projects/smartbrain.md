@@ -2,8 +2,7 @@
 date: "2019-11-22"
 title: "Smart Brain"
 github: "https://github.com/motawy/smart-brain"
-external: ""
-image: "./img/smartbrain.png"
+hosted: ""
 techUsed:
   - React
   - Redux

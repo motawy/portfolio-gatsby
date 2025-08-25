@@ -5,7 +5,7 @@ import { RiSave3Fill } from 'react-icons/ri';
 import styled from 'styled-components';
 import media from '@styles/media';
 import colors from '@config/colors/index.yml';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import sr from '@utils/sr';
 import srConfig from '@utils/srConfig';
 
@@ -25,7 +25,7 @@ const About = ({ data }) => {
                 />
                 <AboutContainer>
                     <AboutPictureContainer>
-                        <AboutImage fluid={aboutImage.childImageSharp.fluid} alt="Avatar of Mido" />
+                        <AboutImage image={getImage(aboutImage.childImageSharp)} alt="Avatar of Mido" />
                     </AboutPictureContainer>
                     <AboutInfo>
                         <AboutTitle>
@@ -117,14 +117,10 @@ const AboutPictureContainer = styled.div`
     }
 `;
 
-const AboutImage = styled(Img)`
-    width: 100%;
-    height: 100%;
+const AboutImage = styled(GatsbyImage)`
     display: block;
-    -o-object-fit: cover;
-    object-fit: cover;
+    border-radius: 5px;
     z-index: 2;
-    position: absolute;
 `;
 
 const AboutInfo = styled.div`

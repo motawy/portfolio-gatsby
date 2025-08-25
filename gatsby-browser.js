@@ -1,1 +1,1 @@
-require("typeface-poppins")
+require("@fontsource/poppins")

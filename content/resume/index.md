@@ -1,42 +1,40 @@
 ---
 education:
+- title: "AWS Certified Solutions Architect – Associate"
+  years: "2025"
+  description: "Validated expertise in designing and deploying scalable, highly available, and fault-tolerant systems on AWS."
+
 - title: "Nano Degree - Cloud Developer"
   years: "2020"
-  description: "Specialised as Cloud Developer using AWS to develop and deploy
-apps leveraging microservices, Kubernetes clusters, and serverless
-application technology."
+  description: "Specialised as a Cloud Developer using AWS to design and deploy applications with microservices, Kubernetes clusters, and serverless technologies."
 
 - title: "Bachelor of IT - Mobile Apps"
   years: "2017 - 2019"
-  description: "Developed various applications using the latest technologies for
-Web and Mobile for clients and companies achieving great
-results and exeeding expectation."
+  description: "Developed web and mobile applications for real-world clients, consistently delivering high-quality solutions that exceeded expectations."
+
 
 work: 
+- title: "Idea 11 - Senior Consulting Developer"
+  years: 2023 - present
+  description: "Led backend development for the Gold Coast City Council mobile app, transforming a fragile legacy system into a reliable, scalable platform. Refactored Python services to cut response times from ~90s to under 10s, optimized databases handling millions of records, and introduced zero-downtime deployment practices. Also standardized developer environments with Nix, accelerating onboarding and reducing friction across the team."
+
 - title: "CitrusAd - Software Engineer"
   years: "2022 - 2023"
-  description: "Built from scratch a system to facilitate communication between retailers and suppliers and for the creation of brand pages. This system was built using NestJS, PostgreSQL, Redis, and Okta (auth). The infrastructure for the system was written with Terraform to create a template for easy deployment in other environments. Also built a system using Golang, Gin, Redis and PostgreSQL to process a large quantity of information and return a quick response based on the query."
-# - title: "Swiftx - Backend Developer"
-#   years: "2022"
-#   description: "Collaborated with a team of 6 people to develop a microservice to replace the existing one in the monolith using TSOA framework."
+  description: "Built a retailer–supplier communication platform with NestJS, PostgreSQL, Redis, and Okta, deployed via Terraform for easy multi-environment rollout. Also developed high-performance Golang services that processed large data sets and improved query response times by ~30%."
+
+- title: "Swiftx - Backend Developer"
+  years: "2022"
+  description: "Contributed to a 6-person team in migrating core functionality from a monolith to microservices, designing and implementing a new service using the TSOA framework to improve maintainability and scalability."
+
 - title: "Bandyer (now Kaleyra) - Backend Developer"
   years: "2020 - 2022"
-  description: "Built multiple backend systems using new technologies and rewrote legacy code. Constant collaboration between me and frontend, mobile apps, and design teams to achieve the best solutions through iterations. Specifically: built a decentralized auth system to use for all internal products using NodeJS, TS, RabbitMQ, Redis, Docker and Kubernetes, built a chat service from scratch using NodeJS and TS, Socket.IO, Redis, RabbitMQ, DynamoDB, AWS and GitlabCI for CI/CD, built a labda system to receive updates for Smart glasses (google) using the Serverless framework, rewrote 90% of the central legacy system updating connection with other services using new technologies and splitting into microservices."
+  description: "Delivered multiple backend systems and modernized core legacy code into microservices. Highlights include: building a decentralized authentication system for internal products (Node.js, TypeScript, RabbitMQ, Redis, Docker, Kubernetes); creating a custom chat service replacing Twilio (Node.js, Socket.IO, DynamoDB, AWS); and deploying an AWS Lambda system for smart glasses updates. Modernization efforts replaced ~90% of the central legacy system, improving resilience and maintainability."
+
 - title: "NOMIT - Full Stack Developer"
   years: "2018 - 2020"
-  description: "Collaborated with a team of 4 people in the development of
-                    multiple API using NodeJS and Progressive Web Application
-                    (PWA) using AngularJS. Managed to create a product from
-                    scratch called WISP (Working-holiday & International Student
-                    Internship Platform) which is a website with a mobile
-                    application that helps temporary visa holders to find
-                    internships with Australia based companies as a first step
-                    for job connections."
+  description: "Co-developed multiple APIs in Node.js and a Progressive Web App in AngularJS. Founded WISP (Working-holiday & International Student Internship Platform) from scratch — a web and mobile platform that helped visa holders connect with Australian companies for internships and career opportunities."
+
 - title: "LIFX - Cloud Developer"
   years: "2018"
-  description: "Cooperated with a team of 5 people in developing and hardening all
-              API using Go Programming Language. Created an automated testing
-              tool to help find bugs in all API which facilitate the company in
-              cutting down the time for testing. Write clean and reusable code
-              to achieve easy testing and deployment."
+  description: "Strengthened API reliability by developing and hardening Go-based services. Created an automated testing tool that reduced manual QA time significantly, enabling faster release cycles and higher product quality."
 ---

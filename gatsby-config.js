@@ -10,6 +10,7 @@ module.exports = {
         image: '/images/siteImage.png',
     },
     plugins: [
+        `gatsby-plugin-image`,
         `gatsby-plugin-react-helmet`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,

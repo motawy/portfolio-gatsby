@@ -1,10 +1,57 @@
-import React from "react"
+import React, { useState } from "react"
 import { FaRegPaperPlane } from "react-icons/fa"
 import styled from "styled-components"
 import colors from "@config/colors/index.yml"
 import media from "@styles/media"
 
 const ContactForm = ({ form }) => {
+  const [values, setValues] = useState({ name: "", email: "", message: "", botField: "" })
+  const [errors, setErrors] = useState({})
+  const [submitted, setSubmitted] = useState(false)
+
+  const encode = data =>
+    Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+
+  const validate = () => {
+    const nextErrors = {}
+    if (!values.name.trim()) nextErrors.name = "Please enter your name"
+    if (!values.email.trim()) nextErrors.email = "Please enter your email"
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) nextErrors.email = "Enter a valid email"
+    if (!values.message.trim()) nextErrors.message = "Please enter a message"
+    setErrors(nextErrors)
+    return Object.keys(nextErrors).length === 0
+  }
+
+  const handleChange = e => {
+    const { name, value } = e.target
+    setValues(v => ({ ...v, [name]: value }))
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    if (!validate()) return
+    if (typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
+      setSubmitted(true)
+      setValues({ name: "", email: "", message: "", botField: "" })
+      setErrors({})
+      return
+    }
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", name: values.name, email: values.email, message: values.message, "bot-field": values.botField }),
+      })
+      setSubmitted(true)
+      setValues({ name: "", email: "", message: "", botField: "" })
+      setErrors({})
+    } catch (err) {
+      setErrors({ submit: "Something went wrong. Please try again later." })
+    }
+  }
+
   return (
     <FormContainer>
       <Title>
@@ -14,31 +61,48 @@ const ContactForm = ({ form }) => {
         <span>{form.subtitle}</span>
       </Subtitle>
       <Form className="form">
-        <form method="post" netlify-honeypot="bot-field" data-netlify="true">
-          <input type="hidden" name="bot-field" />
+        <form name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} noValidate>
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" value={values.botField} onChange={handleChange} />
           <label htmlFor="name" aria-label="Name">
             <input
               type="text"
               id="name"
               name="name"
               placeholder="Type your name"
+              value={values.name}
+              onChange={handleChange}
+              required
             />
           </label>
+          {errors.name && <div id="winError">{errors.name}</div>}
           <label htmlFor="email" aria-label="Email">
             <input
               type="email"
               id="email"
               name="email"
               placeholder="Type your email"
+              value={values.email}
+              onChange={handleChange}
+              required
             />
           </label>
+          {errors.email && <div id="winError">{errors.email}</div>}
           <label htmlFor="message" aria-label="Message">
             <textarea
               name="message"
               id="message"
               placeholder="Type your messages"
+              value={values.message}
+              onChange={handleChange}
+              required
             ></textarea>
           </label>
+          {errors.message && <div id="winError">{errors.message}</div>}
+          {errors.submit && <div id="winError">{errors.submit}</div>}
+          {submitted && (
+            <SuccessMsg role="status" aria-live="polite">Thanks! Your message has been sent.</SuccessMsg>
+          )}
           <div className="btn__send">
             <SubmitButton
               aria-label="Send message"
@@ -167,5 +231,11 @@ const SubmitButton = styled.button`
     display: inline-block;
     vertical-align: middle;
   }
+`
+const SuccessMsg = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: ${colors.accent};
+  font-weight: 500;
 `
 export default ContactForm

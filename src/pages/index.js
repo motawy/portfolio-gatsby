@@ -49,9 +49,7 @@ export const pageQuery = graphql`
           aboutSkills
           aboutImage {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, quality: 90)
             }
           }
         }
@@ -88,9 +86,7 @@ export const pageQuery = graphql`
           external
           image {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, quality: 90)
             }
           }
         }

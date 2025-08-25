@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import TitleSection from "../title-section/title-section.component"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import colors from "@config/colors/index.yml"
 import media from "@styles/media"
 import { FiExternalLink, FiGithub } from "react-icons/fi"
@@ -83,7 +83,7 @@ const Portfolio = ({ data }) => {
                     rel="nofollow noopener noreferrer"
                   >
                     <ProjectFeaturedImg
-                      fluid={image.childImageSharp.fluid}
+                      image={getImage(image && image.childImageSharp ? image.childImageSharp : image)}
                       alt={title}
                     />
                   </ProjectImgContainer>
@@ -223,7 +223,7 @@ const ProjectLinkWrapper = styled.div`
   }
 `
 
-const ProjectFeaturedImg = styled(Img)`
+const ProjectFeaturedImg = styled(GatsbyImage)`
   width: 100%;
   max-width: 100%;
   vertical-align: middle;
@@ -232,9 +232,6 @@ const ProjectFeaturedImg = styled(Img)`
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1) brightness(90%);
   ${media.tablet`
-    object-fit: cover;
-    width: auto;
-    height: 100%;
     filter: grayscale(100%) contrast(1) brightness(80%);
   `};
 `

@@ -17,18 +17,10 @@ aboutSkillsImages:
     - './img/'
 ---
 
-Few years ago, I decided to pursue my passion for IT and decided to
-finish my studies. After that, it has been a roller coaster in terms of
-learning, opportunities, amazing colleagues,friends and mentors that helped me improve so much.
+A few years ago, I made the decision to pursue IT seriously and finish my studies. Since then, I’ve had the chance to work with amazing colleagues, mentors, and clients, and every project has been an opportunity to grow both technically and personally.  
 
-I am glad that I took that decision, and I
-want to keep pushing forward to gain more experience and achieve my
-goals. My area of focus lies in back-end development using cloud technologies
-and DevOps mentality.
+Today, I focus on **backend engineering and cloud-native solutions**, with a strong DevOps mindset. Most of my work revolves around building reliable, scalable APIs and systems on AWS — but I also enjoy picking up new technologies and applying them where they make sense.  
 
-That doesn't mean that I'm not able to use front-end technologies. This website
-was created using Gatsby, GraphQL and styled-components.
+While my passion is backend and infrastructure, I’m not limited to it. This very site was built with Gatsby, GraphQL, and styled-components — because I like having an eye on the full picture.  
 
-I enjoy developing new products and improving the quality of existing ones,
-working in teams to iterate and improve the experiences that reach
-business goals.
+What motivates me most is **solving complex problems** and **improving existing systems** so that teams can move faster and businesses can deliver better experiences to their users. I thrive in collaborative environments where people iterate, share knowledge, and push each other to do better.

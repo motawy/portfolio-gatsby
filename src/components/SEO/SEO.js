@@ -1,70 +1,51 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { useLocation } from "@reach/router"
 
-const Seo = () => {
-  const { site } = useStaticQuery(query)
-  const { title, description, author, url, image } = site.siteMetadata
-  const { pathname } = useLocation()
-  const seo = {
-    title: title,
-    description: description,
-    author: author,
-    url: `${url}${pathname}`,
-    image: `${url}${image}`,
-  }
+export const SiteHead = ({ title, description, image, canonicalPath }) => {
+  const { site } = useStaticQuery(graphql`
+    query HeadSiteMeta {
+      site {
+        siteMetadata {
+          title
+          description
+          url
+          image
+        }
+      }
+    }
+  `)
+
+  const meta = site.siteMetadata
+  const pageTitle = title || meta.title
+  const pageDescription = description || meta.description
+  const pageImage = image ? `${meta.url}${image}` : `${meta.url}${meta.image}`
+  const canonical = canonicalPath ? `${meta.url}${canonicalPath}` : meta.url
 
   return (
-    <Helmet title={seo.title}>
+    <>
       <html lang="en" />
-      <meta
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-        name="viewport"
-      />
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-      {seo.url && <meta property="og:url" content={seo.url} />}
-      {seo.title && <meta property="og:title" content={seo.title} />}
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
-      )}
-      {seo.keywords && <meta property="og:keywords" content={seo.keywords} />}
-      {seo.image && <meta property="og:image" content={seo.image} />}
-    </Helmet>
+      <title>{pageTitle}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+      <meta name="description" content={pageDescription} />
+      <link rel="canonical" href={canonical} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
+      <meta property="og:image" content={pageImage} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:description" content={pageDescription} />
+      <meta name="twitter:image" content={pageImage} />
+    </>
   )
 }
 
-export default Seo
-
-Seo.propTypes = {
+SiteHead.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  author: PropTypes.string,
-  url: PropTypes.string,
   image: PropTypes.string,
+  canonicalPath: PropTypes.string,
 }
 
-Seo.defaultProps = {
-  title: null,
-  description: null,
-  author: null,
-  url: null,
-  image: null,
-}
-
-const query = graphql`
-  query Seo {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        url
-        keywords
-        image
-      }
-    }
-  }
-`
+export default SiteHead

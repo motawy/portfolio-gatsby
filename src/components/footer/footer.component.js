@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <span>
-        &copy; 2020{" "}
+        &copy; 2025{"  "}
         <a
           target="_blank"
           rel="noopener noreferrer"

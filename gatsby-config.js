@@ -11,7 +11,7 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-image`,
-        `gatsby-plugin-react-helmet`,
+        
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-offline`,
@@ -53,8 +53,7 @@ module.exports = {
                         options: {
                             maxWidth: 700,
                             linkImagesToOriginal: true,
-                            quality: 90,
-                            tracedSVG: true,
+                            quality: 90
                         },
                     },
                 ],

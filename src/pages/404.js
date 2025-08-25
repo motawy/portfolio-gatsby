@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout/layout.component"
+import { SiteHead } from "../components/SEO/SEO"
 
 const NotFound = () => {
   return (
@@ -26,3 +27,7 @@ const NotFound = () => {
 }
 
 export default NotFound
+
+export const Head = () => (
+  <SiteHead title="404 | MIDO." canonicalPath="/404/" />
+)

@@ -9,6 +9,7 @@ import Contact from "../components/contact/contact.component"
 import Footer from "../components/footer/footer.component"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+import { SiteHead } from "../components/SEO/SEO"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -76,7 +77,7 @@ export const pageQuery = graphql`
     }
     portfolio: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/my-work/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
         frontmatter {
@@ -95,7 +96,7 @@ export const pageQuery = graphql`
     }
     projects: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/my-projects/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
         frontmatter {
@@ -130,3 +131,11 @@ export const pageQuery = graphql`
 `
 
 export default IndexPage
+
+export const Head = () => (
+  <SiteHead
+    title="MIDO. | Portfolio"
+    description="Mohammed Tantawy (Mido) – Full-Stack Developer based in Australia."
+    canonicalPath="/"
+  />
+)
